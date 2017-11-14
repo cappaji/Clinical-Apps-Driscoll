@@ -1,0 +1,34 @@
+*** Settings ***
+Documentation     Text file containing data for the New Encounter Form:
+...
+...               ${Location} = \ North Eastern Hospital \ | \ Northern Hospital,
+...               ${FirstName} = Patients First Name,
+...               ${LastName} = Patients Last Name,
+...               ${Gender} = Male \ | \ Female \ | \ Unknown,
+...               ${MRN} = MRN value,
+...               ${Weight} = Patients weight
+...               ${WeightMeasure} = Pounds \ | \ Kilograms \ | \ Pounds and Ounces \ | \ Ounces \ | \ Grams,
+...               ${FutureDate} = Future Date for Date of Birth Field,
+...               ${PastDate} = Past Date for Date of Birth Field,
+...               ${ConsentOption} = Yes \ | \ No,
+...               ${ConsultType} = Cardiology \ | \ General Surgery \ | \ Neurology \ | \ Neurosurgery,
+...               ${RefNeonatologist} = Referring Neonatologist name,
+...               ${FutureDate&Time} = Future Date and Time for Admission Time and Consult Time,
+...               ${PastDate&Time} = Past Date and Time for Admission Time and Consult Time,
+
+*** Variables ***
+${Location}       Northern Hospital
+${FirstName}      John
+${LastName}       Doe
+${Gender}         Unknown
+${MRN}            2345
+${Weight}         120
+${WeightMeasure}    Pounds
+${FutureDate}     12/22/2034
+${PastDate}       12/22/2014
+${ConsentOption}    Yes
+${ConsultType}    Cardiology
+${RefNeonatologist}    Deb Pat
+${FutureDate&time}    11/22/2034 10:30
+${PastDate&Time}    11/22/2014 10:30
+${ReasonForReferralText}    Sample

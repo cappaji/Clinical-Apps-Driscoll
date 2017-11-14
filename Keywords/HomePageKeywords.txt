@@ -1,0 +1,80 @@
+*** Settings ***
+Documentation     All the Keywords required to perform the Home Page test.
+...
+...               Dependencies:
+...               ElementLocators -> HomePageElementLocators.
+...               ElementLocators -> EncounterFormElementLocators.
+...               DataFiles -> HomePageData.txt
+...
+Library           ExtendedSelenium2Library
+Library           Collections
+Library           String
+Library           DateTime
+Library           Process
+Resource          ../ElementLocators/HomePageElementLocators.txt
+Resource          ../DataFiles/HomePageData.txt
+Resource          ../ElementLocators/EncounterFormElementLocators.txt
+
+*** Keywords ***
+ToggleNavigation
+    [Documentation]    Keyword to click on the Toggle Navigation button:
+    ...
+    ...    1) Click on toggle navigation button identified by ${ToggleNavBtn} to hide the navigation bar.
+    ...    2) Click again on toggle navigation button identified by ${ToggleNavBtn} to show the navigation bar.
+    ...
+    Click Element    ${ToggleNavBtn}
+    Click Element    ${ToggleNavBtn}
+
+SearchForPatients
+    [Arguments]    ${SearchContent}
+    Input Text    ${SearchPatientTextField}    ${SearchContent}
+    Clear Element Text    ${SearchPatientTextField}
+    Input Text    ${SearchPatientTextField}    ${SearchContent}
+    Click Button    ${SearchPatientButton}
+    Press Key    ${SearchPatientTextField}    \\13
+    ${RowsCount}    Get Matching Xpath Count    //div[@id='patientSearch']//tr
+    ${ColumnCount}    Get Matching Xpath Count    //div[@id='patientSearch']//tr//td
+    ${ColumnDataList}    Create List
+    : FOR    ${rowindex}    IN RANGE    1    ${RowsCount}
+    \    ${columndata}    Get Text    //div[@id='patientSearch']//tr[${rowindex}]//td[2]
+    \    Append To List    ${ColumnDataList}    ${columndata}
+    Log    ${SearchContent}
+    Log List    ${ColumnDataList}
+    Capture Page Screenshot
+    Should Not Be Empty    ${ColumnDataList}
+    Click Element    ${EncountersNavShortcut}
+
+IDCRHelpCenter
+    Click Element    ${HelpDropdown}
+    Wait Until Page Contains Element    ${HCLiveChatLink}    15s
+    Click Element    ${HCLiveChatLink}
+    Select Window    url=https://ssl.chatanexpert.com/in.php?c=52&g=155&fps=true&s=div_intouch_adv&info=true&i=From%20Support&exn=Jordan%20R.&exa=/images/avatar/p74.jpg&sup=true&phoneins=1166&emailins=1167&formins=1168&la_available=true
+    Element Text Should Be    ${SSLChatExpertText}    Jordan R.
+    Close Window
+    Select Window    title=InTouch Clinical Apps
+    Click Element    ${HelpDropdown}
+    Wait Until Page Contains Element    ${HCContactUs}    15s
+    Click Element    ${HCContactUs}
+    Select Window    url=https://www.intouchhealth.com/about/contact-us
+    ${CurrentWindowTitle}=    Get Title
+    Should Be Equal As Strings    ${CurrentWindowTitle}    Contact Us | InTouch Health
+    Close Window
+    Select Window    title=InTouch Clinical Apps
+
+ClickUserDropdown
+    Text Operations
+
+Text Operations
+    [Arguments]    ${read}    ${click}    ${out}
+    [Documentation]    This keyword with click or read the text elements in DOM Structure.
+    ${output}=    Run Keyword If    '${read}' == 'yes'    Get Text    //span[text(),"${out}"]
+    Run Keyword If    '${click}' == 'yes'    Click Element    //span[text(),"${output}"]
+
+ClickNewEncounterButton
+    [Documentation]    Keyword to click the New Encounter form button:
+    ...
+    ...    1) Clicks the new encounter button identified by ${NewEncButton}.
+    ...    2) Verifies the action by checking if the destination page has the text Pediatric Encounter text.
+    ...
+    Click Button    ${NewEncBtn}
+    Page Should Contain Element    ${PediatricEncounterTextElement}

@@ -1,0 +1,178 @@
+*** Settings ***
+Documentation     All the Keywords required to perform New Encounter form test
+...
+...               Dependencies:
+...               ElementLocators -> EncounterFormElementLocators.
+...               DataFiles -> EncounterFormCustomData.txt
+Library           ExtendedSelenium2Library
+Library           Collections
+Library           String
+Library           Process
+Library           DateTime
+Resource          ../DataFiles/EncounterFormCustomData.txt
+Resource          ../ElementLocators/EncounterFormElementLocators.txt
+
+*** Keywords ***
+CloseNewEncounterForm
+    [Documentation]    Keyword to Close the Encounter Form:
+    ...
+    ...    1) Select Top Window from IFrame.
+    ...    2) Click on Element ${CloseEncounterFormElement}.
+    Select Window
+    Click Element    ${CloseEncounterFormElement}
+
+ConsultTypeOption
+    [Arguments]    ${value}
+    [Documentation]    Keyword to set the Consult Type option:
+    ...
+    ...    1) Recieves an argument ${value} which is expected to be either Cardiology or General Surgery or Neurology or Neurosurgery.
+    ...    2) Scroll Into View the element to make the element viewable for it to be accessed.
+    ...    3) Click on the element by passing the ${value} text to the xpath of the elements label tag.
+    Scroll Element Into View    //div[@id='ctrl_consulttype']//label[text()='${value}']
+    Click Element    //div[@id='ctrl_consulttype']//label[text()='${value}']
+
+TeleMedConsentOption
+    [Arguments]    ${value}
+    [Documentation]    Keyword to set the 'Parent / Guardian Consents to Tele-Medicine' option:
+    ...
+    ...    1) Recieves an argument ${value} which is expected to be either Yes or No.
+    ...    2) Scroll Into View the element to make the element viewable for it to be accessed.
+    ...    3) Click on the element by passing the ${value} text to the xpath of the elements label tag.
+    Scroll Element Into View    //div[@id='ctrl_telemedicineconsent']//label[text()='${value}']
+    Click Element    //div[@id='ctrl_telemedicineconsent']//label[text()='${value}']
+
+ValidateDate
+    [Arguments]    ${dateDivText}    ${DateInputID}    ${datetimepickerID}
+    Click Element    //div[@id='${dateDivText}']//following-sibling::span[2]/span
+    ${CurrentdateFromApp}=    Get Value    ${DateInputID}
+    log    ${CurrentdateFromApp}=
+    Clear Element Text    ${DateInputID}
+    ${TimeZoneText}=    Get Text    ${TimezoneElement}
+    ${Date}=    ReturnCurrentDate    ${TimeZoneText}
+    log    ${Date}
+    ${CurrentdateFromSystem}=    Convert Date    ${Date}    result_format=%m/%d/%Y    date_format=%m/%d/%Y %H:%M
+    @{DateList}=    Create List    ${FutureDate}    ${PastDate}
+    : FOR    ${ListIndex}    IN    @{DateList}
+    \    ${value}=    Subtract Date From Date    ${CurrentdateFromSystem}    ${ListIndex}    result_format=number    date1_format=%m/%d/%Y
+    \    ...    date2_format=%m/%d/%Y
+    \    Run Keyword If    ${value}<0    Run Keywords    InputFutureDate&VerifyError    ${DateInputID}    ${datetimepickerID}
+    \    ...    ${FutureDate}
+    \    ...    AND    InputPastDate&VerifyNoError    ${DateInputID}    ${datetimepickerID}    ${PastDate}
+    \    ...    ELSE    Run Keyword    InputPastDate&VerifyNoError    ${DateInputID}    ${datetimepickerID}
+    \    ...    ${PastDate}
+
+InputFutureDate&VerifyError
+    [Arguments]    ${DateInputID}    ${datetimepickerID}    ${ActualDate}
+    [Documentation]    Keyword to Input the Future date and verify for the Error:
+    ...
+    ...    1) Recieves 3 arguments
+    ...    ${DateInputID} to identify date text field,
+    ...    ${datetimepickerID} to identify the Error message element
+    ...    ${ActualDate} value of the date to be sent as an input.
+    ...
+    ...    2) Input the date using ${DateInputID} and ${ActualDate}
+    ...    3) Checks if the page contains the No future date allowed error messaage by passing ${datetimepickerID} to xpath of error message element.
+    Input Text    ${DateInputID}    ${ActualDate}
+    Page Should Contain Element    //datetimepicker[@id='${datetimepickerID}']//span[text()='No future dates allowed.']
+
+InputPastDate&VerifyNoError
+    [Arguments]    ${DateInputID}    ${datetimepickerID}    ${ActualDate}
+    [Documentation]    Keyword to Input the Past date and verify no Error is displayed:
+    ...
+    ...    1) Recieves 3 arguments
+    ...    ${DateInputID} to identify date text field
+    ...    ${datetimepickerID} to identify the Error message element
+    ...    ${ActualDate} value of the date to be sent as an input.
+    ...
+    ...    2) Input the date using ${DateInputID} and ${ActualDate}
+    ...    3) Checks if the page does not contains the No future date allowed error messaage by passing ${datetimepickerID} to xpath of error message element.
+    Input Text    ${DateInputID}    ${ActualDate}
+    Comment    Page Should Not Contain Element    //datetimepicker[@id='${datetimepickerID}']//span[text()='No future dates allowed.']
+
+ValidateDate&Time
+    [Arguments]    ${DateTimeDivText}    ${DateTimeInputID}    ${datetimepickerID}
+    Click Element    //div[@id='${DateTimeDivText}']//following-sibling::span[2]/span
+    ${CurrentDateTime}=    Get Value    ${DateTimeInputID}
+    log    ${CurrentDateTime}
+    Clear Element Text    ${DateTimeInputID}
+    ${TimeZoneText}=    Get Text    ${TimezoneElement}
+    ${CurrentDateFromSystem}=    ReturnCurrentDate    ${TimeZoneText}
+    log    ${CurrentDateFromSystem}
+    ${InvalidTime1}=    Add Time To Date    ${CurrentDateTime}    01:00:00    result_format=%m/%d/%Y %H:%M    date_format=%m/%d/%Y %H:%M
+    ${InvalidTime2}=    Add Time To Date    ${CurrentDateTime}    00:30:00    result_format=%m/%d/%Y %H:%M    date_format=%m/%d/%Y %H:%M
+    @{DateTimeList}=    Create List    ${FutureDate&Time}    ${PastDate&Time}    ${InvalidTime1}    ${InvalidTime2}
+    : FOR    ${ListIndex}    IN    @{DateTimeList}
+    \    ${value}=    Subtract Date From Date    ${CurrentDateFromSystem}    ${ListIndex}    result_format=number    date1_format=%m/%d/%Y %H:%M
+    \    ...    date2_format=%m/%d/%Y %H:%M
+    \    Run Keyword If    ${value}<0    Run Keywords    InputFutureDate&VerifyError    ${DateTimeInputID}    ${datetimepickerID}
+    \    ...    ${FutureDate&time}
+    \    ...    AND    InputPastDate&VerifyNoError    ${DateTimeInputID}    ${datetimepickerID}    ${PastDate&Time}
+    \    ...    ELSE    Run Keyword    InputPastDate&VerifyNoError    ${DateTimeInputID}    ${datetimepickerID}
+    \    ...    ${PastDate&Time}
+
+FillNewEncounterForm
+    Select Frame    ${IFrameElement}
+    Input Text    ${ReferralReasonElementl}    ${ReasonForReferralText}
+    Select From List By Label    ${LocationLabelElement}    ${Location}
+    Input Text    ${FirstNameInputElement}    ${FirstName}
+    Input Text    ${LastNameInputElement}    ${LastName}
+    Select Gender
+    Input Text    ${MRNInputElement}    ${MRN}
+    Input Text    ${WeightField_EnctrForm}    ${Weight}
+    Select From List By Label    ${SelectWeightMeasureElement}    ${WeightMeasure}
+    ValidateDate    ${DOBDateNowButtonElement}    ${DOBInputFieldElement}    ${DOBNoFutureDateErrorElement}
+    TeleMedConsentOption    ${ConsentOption}
+    ConsultTypeOption    ${ConsultType}
+    Scroll Element Into View    ${RefNeonatologistElement}
+    Input Text    ${RefNeonatologistElement}    ${RefNeonatologist}
+    ValidateDate&Time    ${AdmisssionTimeDateTimeNowButtonElement}    ${AdmisssionTimeInputFieldElement}    ${AdmissionTimeNoFutureDateErrorElement}
+    ValidateDate&Time    ${ConsultTimeDateTimeNowButtonElement}    ${ConsultTimeInputFieldElement}    ${ConsultTimeNoFutureDateErrorElement}
+
+SelectGender
+    [Documentation]    Keyword to select the Gender radio button:
+    ...
+    ...    1) Reads the input ${Gender} from Data File.
+    ...    2) Clicks the respective radio button element based on the conditon matched in the IF ELSE block.
+    log    ${Gender}
+    Run Keyword If    '${Gender}' == 'Male'    Click Element    ${MaleGenderElement}
+    ...    ELSE IF    '${Gender}' == 'Female'    Click Element    ${FemaleGenderElement}
+    ...    ELSE IF    '${Gender}' == 'Unknown'    Click Element    ${UnknownGenderElement}
+
+ReturnCurrentDate
+    [Arguments]    ${Timezone}
+    [Documentation]    Keyword which returns the current system date:
+    ...
+    ...    1) Recieves 1 argument ${Timezone} that containds the value of the desired timezone.
+    ...    2) Gets the current system date in the required format and timezone selected
+    ...    3) Assigns and return the Cureent Date ${CyrrentDate} based on the type of timezone passed as an argument.
+    ${CSTDate}=    Get Current Date    UTC    -6 hours    result_format=%m/%d/%Y %H:%M
+    log    ${CSTDate}
+    ${ESTDate}=    Get Current Date    UTC    -5 hours    result_format=%m/%d/%Y %H:%M
+    log    ${ESTDate}
+    ${CurrentDate}=    Set Variable If    '${Timezone}' == 'CST'    ${CSTDate}    '${Timezone}' == 'EST'    ${ESTDate}
+    [Teardown]
+    [Return]    ${CurrentDate}
+
+GoBackOnCloseFormWindow
+    [Documentation]    Keyword to click on Go Back button on close form window:
+    ...
+    ...    1) Clicks the button Go back identified by ${GoBackButtonElement} locator.
+    ...    2) Verifies the destination page after clicking Go Back button by checking for the Pediatric Encounter text on the Top Window.
+    Click Button    ${GoBackButtonElement}
+    Page Should Contain Element    ${PediatricEncounterTextElement}
+
+CloseWithoutSavingOnCloseFormWindow
+    [Documentation]    Keyword to click on Close Without Saving button on close form window:
+    ...
+    ...    1) Clicks the button Close Without Saving identified by ${CloseWithoutSavingButtonElement} locator.
+    ...    2) Verifies the destination page after clicking Close Without Saving button by checking if the current window title matches the string provided.
+    Click Button    ${CloseWithoutSavingButtonElement}
+    ${CurrentWindowTitle}=    Get Title
+    Should Be Equal As Strings    ${CurrentWindowTitle}    InTouch Clinical Apps
+
+ClickStatProcessButton
+    [Documentation]    Keyword to click on Start Process button:
+    ...
+    ...    1) Clicks the start process button identified by ${StartProcessButtonElement}
+    ...    2)
+    Click Button    ${StartProcessButtonElement}

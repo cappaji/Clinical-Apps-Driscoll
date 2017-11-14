@@ -1,0 +1,13 @@
+*** Settings ***
+Documentation     Text file containing data for the Login:
+...
+...               ${AppURL} = URL to launch the application.
+...               ${UserName} = Username text on the login page.
+...               ${Password} = Password text on the login page.
+...
+...
+
+*** Variables ***
+${AppURL}         https://driscoll.ith-int1.kainosevolve-dev.com/webapp
+${UserName}       admin
+${Password}       k4in05

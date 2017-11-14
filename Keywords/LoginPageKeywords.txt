@@ -1,0 +1,43 @@
+*** Settings ***
+Documentation     All the Keywords required to perform the Login Page test.
+...
+...               Dependencies:
+...               ElementLocators -> LoginPageElementLocators.
+...               DataFiles -> LoginPageData.txt
+...
+Library           ExtendedSelenium2Library
+Library           Collections
+Library           String
+Library           Process
+Library           DateTime
+Resource          ../DataFiles/LoginPageData.txt
+Resource          ../ElementLocators/LoginPageElementLocators.txt
+
+*** Keywords ***
+Login
+    [Arguments]    ${User}    ${Pass}
+    [Documentation]    Keyword to Login into the Application:
+    ...
+    ...    1) Enter Input text field for Username
+    ...    2) Enter Input text filed for Password
+    ...    3) Clicking on Login Button
+    ...    4) Verifying the action by matching the destination page/window title with the expected string.
+    ...
+    Input Text    ${UsernameInputFiledElement}    ${User}
+    Input Text    ${PasswordInputFieldElement}    ${Pass}
+    Click Button    ${LoginButtonElement}
+    ${CurrentWindowTitle}=    Get Title
+    Should Be Equal As Strings    ${CurrentWindowTitle}    InTouch Clinical Apps
+
+LaunchApp
+    [Documentation]    Keyword to Launch the application:
+    ...
+    ...    1) Set the varaible ${URL} parsed from the command line argument.
+    ...    2) Opens the browser using the url and browser name.
+    ...    3) Maximize the browser window.
+    ...
+    Set Test Variable    ${URL}
+    Open Browser    ${URL}    chrome
+    log    Browser Launched
+    Maximize Browser Window
+    log    Browser maximized

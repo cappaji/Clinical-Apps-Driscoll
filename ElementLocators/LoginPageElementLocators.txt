@@ -1,0 +1,11 @@
+*** Settings ***
+Documentation     List of Element Locators for the Login Page elements.
+...
+...               ${LoginButtonElement} = Xpath for the Login Button on the login page.
+...               ${UsernameInputFiledElement} = name attribute value for the Username input text tag.
+...               ${PasswordInputFieldElement} = name attribute value for the Password input text tag.
+
+*** Variables ***
+${LoginButtonElement}    //form[@id='form']//button    # //div[@id='auth0-lock-container-1']//button
+${UsernameInputFiledElement}    username
+${PasswordInputFieldElement}    password

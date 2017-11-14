@@ -1,0 +1,25 @@
+*** Settings ***
+Documentation     List of Element Locators identified for HomePage elements.
+...
+...               ${ToggleNavBtn} = Xpath for the Sidebar Toggle Navigation Button.
+...               ${SearchPatientTextField} = Xpath for the "SEarch patients..." input text tag.
+...               ${SearchPatientButton} = Xpath for the Search Patient button.
+...               ${HelpDropdown} = Xpath for the Help Center (?) graphical icon.
+...               ${HCLiveChatLink} = Xpath for the Live Chat Link on the Help Center dropdown window.
+...               ${HCContactUs} = Xpath for the Contact US Link on the Help Center dropdown window.
+...               ${NewEncBtn} = Xpath for the New Encounter+ button.
+...               ${getUserName} = Xpath to the User Profile Dropdown element.
+...               ${SSLChatExpertText} = Xpath to verify text on the SSLChat window after clicking on Live Chat link on the Help Center dropdown.
+...               ${EncountersNavShortcut} = Xpath to Encounters shortcut link on the Navigation bar.
+
+*** Variables ***
+${ToggleNavBtn}    //a[@class='sidebar-toggle']
+${SearchPatientTextField}    //input[@placeholder="Search patients..."]
+${SearchPatientButton}    //form[@id='search-bar']//button
+${HelpDropdown}    //i[@class="fa fa-question-circle"]
+${HCLiveChatLink}    //li[text()='Live Chat']
+${HCContactUs}    //li[text()='Contact Us']
+${NewEncBtn}      //section[@id='listsView']//button[text()='+ New Encounter']
+${getUserName}    //img[@title="Open user profile dropdown"]//following-sibling::span
+${SSLChatExpertText}    //div[@id='avatar']//span[text()='Jordan R.']
+${EncountersNavShortcut}    //nav[@id='mainNavigation']//a[@title='Encounters']

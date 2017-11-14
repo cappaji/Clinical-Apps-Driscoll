@@ -1,0 +1,59 @@
+*** Settings ***
+Documentation     List of Element Locators identified for New Encounter form.
+...
+...               ${ReferralReasonElementl} = ID of the Text Filed Reason for Referral.
+...               ${LocationLabelElement} = ID of the Select class for the Location Dropdown.
+...               ${FirstNameInputElement} = ID of the First Name input text tag.
+...               ${LastNameInputElement} = ID of the Last Name input text tag.
+...               ${MaleGenderElement} = ID of the Male gender input tag inside the label tag of gender.
+...               ${FemaleGenderElement} = ID of the Female gender input tag inside the label tag of gender.
+...               ${UnknownGenderElement} = ID of the Unknown gender input tag inside the label tag of gender.
+...               ${MRNInputElement} = ID of the MRN Input text tag.
+...               ${IFrameElement} = Xpath for the IFrame from Top Window.
+...               ${WeightField_EnctrForm} = Xpath for the Wieght Field input tag.
+...               ${SelectWeightMeasureElement} = ID of the Select class for the Weight Measure Dropdown.
+...               ${DOBDateNowButtonElement} = ID for the Date of Birth Date now graphical icon div tag.
+...               ${DOBInputFieldElement} = ID of the Date of Birth input date tag.
+...               ${DOBNoFutureDateErrorElement} = ID for the Date of Birth 'No Future Dates Allowed' error div tag.
+...               ${RefNeonatologistElement} = ID for the Reference Neonatologist input text tag.
+...               ${AdmisssionTimeDateTimeNowButtonElement} = ID for the Admission Time DateTime now graphical icon div tag.
+...               ${AdmisssionTimeInputFieldElement} = ID of the Admission Time input datetime tag.
+...               ${AdmissionTimeNoFutureDateErrorElement} = ID for the Admission Time 'No Future Dates Allowed' error div tag.
+...               ${ConsultTimeDateTimeNowButtonElement} = ID for the Consult Time DateTime now graphical icon div tag.
+...               ${ConsultTimeInputFieldElement} = ID of the Consult Time input datetime tag.
+...               ${ConsultTimeNoFutureDateErrorElement} = ID for the Consult Time 'No Future Dates Allowed' error div tag.
+...               ${TimezoneElement} = Xpath for the Time Zone displayed next to Admission Time input element.
+...               ${CloseEncounterFormElement} = Xpath for the Close button on the Encounter form at Top Window.
+...               ${GoBackButtonElement} = Xpath for the 'Go Back' button frome the Close form window.
+...               ${PediatricEncounterTextElement} = Xpath for the 'Pediatric Encounter' heading text on the Top Window.
+...               ${CloseWithoutSavingButtonElement} = Xpath for the 'Close Without Saving' button frome the Close form window.
+...               ${StartProcessButtonElement} = ID for the 'Start Process' buttton on the form.
+
+*** Variables ***
+${ReferralReasonElementl}    activiti-reasonforreferral
+${LocationLabelElement}    activiti-location
+${FirstNameInputElement}    activiti-firstname
+${LastNameInputElement}    activiti-lastname
+${MaleGenderElement}    activiti-gender_0
+${FemaleGenderElement}    activiti-gender_1
+${UnknownGenderElement}    activiti-gender_2
+${MRNInputElement}    activiti-mrn
+${IFrameElement}    //iframe
+${WeightField_EnctrForm}    //div[@id='ctrl_weight']//input
+${SelectWeightMeasureElement}    field.id
+${DOBDateNowButtonElement}    dateofbirthDiv
+${DOBInputFieldElement}    activiti-dateofbirthDatetime
+${DOBNoFutureDateErrorElement}    ctrl_dateofbirth
+${RefNeonatologistElement}    activiti-referringneonatologist
+${AdmisssionTimeDateTimeNowButtonElement}    admissiondateDiv
+${AdmisssionTimeInputFieldElement}    activiti-admissiondateDatetime
+${AdmissionTimeNoFutureDateErrorElement}    ctrl_admissiondate
+${ConsultTimeDateTimeNowButtonElement}    consulttimeDiv
+${ConsultTimeInputFieldElement}    activiti-consulttimeDatetime
+${ConsultTimeNoFutureDateErrorElement}    ctrl_consulttime
+${TimezoneElement}    //div[@id='admissiondateDiv']//span[@ng-bind="timezoneAbbr"]
+${CloseEncounterFormElement}    //div[@id='formModal']//span[text()='CLOSE']
+${GoBackButtonElement}    //button[text()=' Go Back ']
+${PediatricEncounterTextElement}    //div[@id='formModal']//span[contains(text(),'Pediatric Encounter')]
+${CloseWithoutSavingButtonElement}    //button[text()=' Close without Saving ']
+${StartProcessButtonElement}    form_complete_button

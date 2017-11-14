@@ -1,0 +1,2442 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20171114 08:45:44.534" generator="Robot 3.0.2 (Python 2.7.13 on win32)">
+<suite source="C:\Python27\Scripts\DRISCOLL\PreviewTest.robot" id="s1" name="PreviewTest">
+<test id="s1-t1" name="LoginTest_ValidCredentials">
+<kw name="LaunchApp" library="LoginPageKeywords">
+<doc>Keyword to Launch the application:</doc>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${URL}</arg>
+</arguments>
+<msg timestamp="20171114 08:45:44.867" level="INFO">${URL} = https://driscoll.ith-int1.kainosevolve-dev.com/webapp</msg>
+<status status="PASS" endtime="20171114 08:45:44.867" starttime="20171114 08:45:44.866"></status>
+</kw>
+<kw name="Open Browser" library="ExtendedSelenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20171114 08:45:44.867" level="INFO">Opening browser 'chrome' to base url 'https://driscoll.ith-int1.kainosevolve-dev.com/webapp'</msg>
+<status status="PASS" endtime="20171114 08:45:50.888" starttime="20171114 08:45:44.867"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Browser Launched</arg>
+</arguments>
+<msg timestamp="20171114 08:45:50.889" level="INFO">Browser Launched</msg>
+<status status="PASS" endtime="20171114 08:45:50.889" starttime="20171114 08:45:50.889"></status>
+</kw>
+<kw name="Maximize Browser Window" library="ExtendedSelenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20171114 08:45:52.026" starttime="20171114 08:45:50.889"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Browser maximized</arg>
+</arguments>
+<msg timestamp="20171114 08:45:52.027" level="INFO">Browser maximized</msg>
+<status status="PASS" endtime="20171114 08:45:52.027" starttime="20171114 08:45:52.026"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:45:52.027" starttime="20171114 08:45:44.866"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${User}</arg>
+</arguments>
+<msg timestamp="20171114 08:45:52.028" level="INFO">${User} = admin</msg>
+<status status="PASS" endtime="20171114 08:45:52.028" starttime="20171114 08:45:52.027"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${Pass}</arg>
+</arguments>
+<msg timestamp="20171114 08:45:52.029" level="INFO">${Pass} = k4in05</msg>
+<status status="PASS" endtime="20171114 08:45:52.030" starttime="20171114 08:45:52.029"></status>
+</kw>
+<kw name="Login" library="LoginPageKeywords">
+<doc>Keyword to Login into the Application:</doc>
+<arguments>
+<arg>${User}</arg>
+<arg>${Pass}</arg>
+</arguments>
+<kw name="Input Text" library="ExtendedSelenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${UsernameInputFiledElement}</arg>
+<arg>${User}</arg>
+</arguments>
+<msg timestamp="20171114 08:45:52.031" level="INFO">Typing text 'admin' into text field 'username'</msg>
+<status status="PASS" endtime="20171114 08:45:52.169" starttime="20171114 08:45:52.031"></status>
+</kw>
+<kw name="Input Text" library="ExtendedSelenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${PasswordInputFieldElement}</arg>
+<arg>${Pass}</arg>
+</arguments>
+<msg timestamp="20171114 08:45:52.170" level="INFO">Typing text 'k4in05' into text field 'password'</msg>
+<status status="PASS" endtime="20171114 08:45:52.287" starttime="20171114 08:45:52.169"></status>
+</kw>
+<kw name="Click Button" library="ExtendedSelenium2Library">
+<doc>Clicks a button identified by ``locator``.</doc>
+<arguments>
+<arg>${LoginButtonElement}</arg>
+</arguments>
+<msg timestamp="20171114 08:45:52.287" level="INFO">Clicking button '//form[@id='form']//button'.</msg>
+<status status="PASS" endtime="20171114 08:45:54.968" starttime="20171114 08:45:52.287"></status>
+</kw>
+<kw name="Get Title" library="ExtendedSelenium2Library">
+<doc>Returns title of current page.</doc>
+<assign>
+<var>${CurrentWindowTitle}</var>
+</assign>
+<msg timestamp="20171114 08:45:54.974" level="INFO">${CurrentWindowTitle} = InTouch Clinical Apps</msg>
+<status status="PASS" endtime="20171114 08:45:54.974" starttime="20171114 08:45:54.968"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${CurrentWindowTitle}</arg>
+<arg>InTouch Clinical Apps</arg>
+</arguments>
+<status status="PASS" endtime="20171114 08:45:54.975" starttime="20171114 08:45:54.974"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:45:54.975" starttime="20171114 08:45:52.031"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Executing Login method</arg>
+</arguments>
+<msg timestamp="20171114 08:45:54.976" level="INFO">Executing Login method</msg>
+<status status="PASS" endtime="20171114 08:45:54.976" starttime="20171114 08:45:54.976"></status>
+</kw>
+<doc>TestCase to verify login into the application using Valid Credentials.
+
+Dependencies:
+Keywords -&gt; LoginPageKeywords.
+DataFiles -&gt; LoginPageData.txt
+
+1) Invokes LaunchApp Keyword form LoginPageKeywords to load the browser with the URL.
+2) Sets the Test Variable admin and k4in05 parsing from the Command Line Arguments.
+3) Executes Login Keyword from LoginPageKeywords.txt to login into the application.
+</doc>
+<status status="PASS" endtime="20171114 08:45:54.976" critical="yes" starttime="20171114 08:45:44.864"></status>
+</test>
+<test id="s1-t2" name="HomepageTest">
+<kw name="ToggleNavigation" library="HomePageKeywords">
+<doc>Keyword to click on the Toggle Navigation button:</doc>
+<kw name="Click Element" library="ExtendedSelenium2Library">
+<doc>Clicks an element identified by ``locator``.</doc>
+<arguments>
+<arg>${ToggleNavBtn}</arg>
+</arguments>
+<msg timestamp="20171114 08:45:54.985" level="INFO">Clicking element '//a[@class='sidebar-toggle']'.</msg>
+<status status="PASS" endtime="20171114 08:45:55.633" starttime="20171114 08:45:54.984"></status>
+</kw>
+<kw name="Click Element" library="ExtendedSelenium2Library">
+<doc>Clicks an element identified by ``locator``.</doc>
+<arguments>
+<arg>${ToggleNavBtn}</arg>
+</arguments>
+<msg timestamp="20171114 08:45:55.633" level="INFO">Clicking element '//a[@class='sidebar-toggle']'.</msg>
+<status status="PASS" endtime="20171114 08:45:56.218" starttime="20171114 08:45:55.633"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:45:56.218" starttime="20171114 08:45:54.984"></status>
+</kw>
+<kw name="SearchForPatients" library="HomePageKeywords">
+<arguments>
+<arg>${SearchName}</arg>
+</arguments>
+<kw name="Input Text" library="ExtendedSelenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${SearchPatientTextField}</arg>
+<arg>${SearchContent}</arg>
+</arguments>
+<msg timestamp="20171114 08:45:56.221" level="INFO">Typing text 'DOE, John' into text field '//input[@placeholder="Search patients..."]'</msg>
+<status status="PASS" endtime="20171114 08:45:56.570" starttime="20171114 08:45:56.220"></status>
+</kw>
+<kw name="Clear Element Text" library="ExtendedSelenium2Library">
+<doc>Clears the text value of text entry element identified by `locator`.</doc>
+<arguments>
+<arg>${SearchPatientTextField}</arg>
+</arguments>
+<status status="PASS" endtime="20171114 08:45:56.612" starttime="20171114 08:45:56.570"></status>
+</kw>
+<kw name="Input Text" library="ExtendedSelenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${SearchPatientTextField}</arg>
+<arg>${SearchContent}</arg>
+</arguments>
+<msg timestamp="20171114 08:45:56.613" level="INFO">Typing text 'DOE, John' into text field '//input[@placeholder="Search patients..."]'</msg>
+<status status="PASS" endtime="20171114 08:45:57.036" starttime="20171114 08:45:56.612"></status>
+</kw>
+<kw name="Click Button" library="ExtendedSelenium2Library">
+<doc>Clicks a button identified by ``locator``.</doc>
+<arguments>
+<arg>${SearchPatientButton}</arg>
+</arguments>
+<msg timestamp="20171114 08:45:57.038" level="INFO">Clicking button '//form[@id='search-bar']//button'.</msg>
+<status status="PASS" endtime="20171114 08:45:57.953" starttime="20171114 08:45:57.037"></status>
+</kw>
+<kw name="Press Key" library="ExtendedSelenium2Library">
+<doc>Simulates user pressing key on element identified by `locator`.</doc>
+<arguments>
+<arg>${SearchPatientTextField}</arg>
+<arg>\\13</arg>
+</arguments>
+<status status="PASS" endtime="20171114 08:45:57.993" starttime="20171114 08:45:57.954"></status>
+</kw>
+<kw name="Get Matching Xpath Count" library="ExtendedSelenium2Library">
+<doc>Returns number of elements matching `xpath`</doc>
+<arguments>
+<arg>//div[@id='patientSearch']//tr</arg>
+</arguments>
+<assign>
+<var>${RowsCount}</var>
+</assign>
+<msg timestamp="20171114 08:45:58.126" level="INFO">${RowsCount} = 11</msg>
+<status status="PASS" endtime="20171114 08:45:58.126" starttime="20171114 08:45:57.994"></status>
+</kw>
+<kw name="Get Matching Xpath Count" library="ExtendedSelenium2Library">
+<doc>Returns number of elements matching `xpath`</doc>
+<arguments>
+<arg>//div[@id='patientSearch']//tr//td</arg>
+</arguments>
+<assign>
+<var>${ColumnCount}</var>
+</assign>
+<msg timestamp="20171114 08:45:58.146" level="INFO">${ColumnCount} = 50</msg>
+<status status="PASS" endtime="20171114 08:45:58.147" starttime="20171114 08:45:58.126"></status>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<doc>Returns a list containing given items.</doc>
+<assign>
+<var>${ColumnDataList}</var>
+</assign>
+<msg timestamp="20171114 08:45:58.147" level="INFO">${ColumnDataList} = []</msg>
+<status status="PASS" endtime="20171114 08:45:58.147" starttime="20171114 08:45:58.147"></status>
+</kw>
+<kw type="for" name="${rowindex} IN RANGE [ 1 | ${RowsCount} ]">
+<kw type="foritem" name="${rowindex} = 1">
+<kw name="Get Text" library="ExtendedSelenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>//div[@id='patientSearch']//tr[${rowindex}]//td[2]</arg>
+</arguments>
+<assign>
+<var>${columndata}</var>
+</assign>
+<msg timestamp="20171114 08:45:58.191" level="INFO">${columndata} = DANN, John</msg>
+<status status="PASS" endtime="20171114 08:45:58.191" starttime="20171114 08:45:58.148"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${ColumnDataList}</arg>
+<arg>${columndata}</arg>
+</arguments>
+<status status="PASS" endtime="20171114 08:45:58.191" starttime="20171114 08:45:58.191"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:45:58.191" starttime="20171114 08:45:58.147"></status>
+</kw>
+<kw type="foritem" name="${rowindex} = 2">
+<kw name="Get Text" library="ExtendedSelenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>//div[@id='patientSearch']//tr[${rowindex}]//td[2]</arg>
+</arguments>
+<assign>
+<var>${columndata}</var>
+</assign>
+<msg timestamp="20171114 08:45:58.231" level="INFO">${columndata} = DOE, John</msg>
+<status status="PASS" endtime="20171114 08:45:58.231" starttime="20171114 08:45:58.192"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${ColumnDataList}</arg>
+<arg>${columndata}</arg>
+</arguments>
+<status status="PASS" endtime="20171114 08:45:58.232" starttime="20171114 08:45:58.231"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:45:58.232" starttime="20171114 08:45:58.191"></status>
+</kw>
+<kw type="foritem" name="${rowindex} = 3">
+<kw name="Get Text" library="ExtendedSelenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>//div[@id='patientSearch']//tr[${rowindex}]//td[2]</arg>
+</arguments>
+<assign>
+<var>${columndata}</var>
+</assign>
+<msg timestamp="20171114 08:45:58.272" level="INFO">${columndata} = DOE, John</msg>
+<status status="PASS" endtime="20171114 08:45:58.272" starttime="20171114 08:45:58.232"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${ColumnDataList}</arg>
+<arg>${columndata}</arg>
+</arguments>
+<status status="PASS" endtime="20171114 08:45:58.272" starttime="20171114 08:45:58.272"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:45:58.272" starttime="20171114 08:45:58.232"></status>
+</kw>
+<kw type="foritem" name="${rowindex} = 4">
+<kw name="Get Text" library="ExtendedSelenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>//div[@id='patientSearch']//tr[${rowindex}]//td[2]</arg>
+</arguments>
+<assign>
+<var>${columndata}</var>
+</assign>
+<msg timestamp="20171114 08:45:58.312" level="INFO">${columndata} = DOE, John</msg>
+<status status="PASS" endtime="20171114 08:45:58.312" starttime="20171114 08:45:58.273"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${ColumnDataList}</arg>
+<arg>${columndata}</arg>
+</arguments>
+<status status="PASS" endtime="20171114 08:45:58.312" starttime="20171114 08:45:58.312"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:45:58.312" starttime="20171114 08:45:58.272"></status>
+</kw>
+<kw type="foritem" name="${rowindex} = 5">
+<kw name="Get Text" library="ExtendedSelenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>//div[@id='patientSearch']//tr[${rowindex}]//td[2]</arg>
+</arguments>
+<assign>
+<var>${columndata}</var>
+</assign>
+<msg timestamp="20171114 08:45:58.353" level="INFO">${columndata} = DOE, John</msg>
+<status status="PASS" endtime="20171114 08:45:58.353" starttime="20171114 08:45:58.313"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${ColumnDataList}</arg>
+<arg>${columndata}</arg>
+</arguments>
+<status status="PASS" endtime="20171114 08:45:58.354" starttime="20171114 08:45:58.353"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:45:58.354" starttime="20171114 08:45:58.313"></status>
+</kw>
+<kw type="foritem" name="${rowindex} = 6">
+<kw name="Get Text" library="ExtendedSelenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>//div[@id='patientSearch']//tr[${rowindex}]//td[2]</arg>
+</arguments>
+<assign>
+<var>${columndata}</var>
+</assign>
+<msg timestamp="20171114 08:45:58.394" level="INFO">${columndata} = DOE, John</msg>
+<status status="PASS" endtime="20171114 08:45:58.394" starttime="20171114 08:45:58.354"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${ColumnDataList}</arg>
+<arg>${columndata}</arg>
+</arguments>
+<status status="PASS" endtime="20171114 08:45:58.394" starttime="20171114 08:45:58.394"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:45:58.394" starttime="20171114 08:45:58.354"></status>
+</kw>
+<kw type="foritem" name="${rowindex} = 7">
+<kw name="Get Text" library="ExtendedSelenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>//div[@id='patientSearch']//tr[${rowindex}]//td[2]</arg>
+</arguments>
+<assign>
+<var>${columndata}</var>
+</assign>
+<msg timestamp="20171114 08:45:58.434" level="INFO">${columndata} = DOE, John</msg>
+<status status="PASS" endtime="20171114 08:45:58.434" starttime="20171114 08:45:58.394"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${ColumnDataList}</arg>
+<arg>${columndata}</arg>
+</arguments>
+<status status="PASS" endtime="20171114 08:45:58.435" starttime="20171114 08:45:58.434"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:45:58.435" starttime="20171114 08:45:58.394"></status>
+</kw>
+<kw type="foritem" name="${rowindex} = 8">
+<kw name="Get Text" library="ExtendedSelenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>//div[@id='patientSearch']//tr[${rowindex}]//td[2]</arg>
+</arguments>
+<assign>
+<var>${columndata}</var>
+</assign>
+<msg timestamp="20171114 08:45:58.475" level="INFO">${columndata} = DOE, John</msg>
+<status status="PASS" endtime="20171114 08:45:58.475" starttime="20171114 08:45:58.435"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${ColumnDataList}</arg>
+<arg>${columndata}</arg>
+</arguments>
+<status status="PASS" endtime="20171114 08:45:58.475" starttime="20171114 08:45:58.475"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:45:58.475" starttime="20171114 08:45:58.435"></status>
+</kw>
+<kw type="foritem" name="${rowindex} = 9">
+<kw name="Get Text" library="ExtendedSelenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>//div[@id='patientSearch']//tr[${rowindex}]//td[2]</arg>
+</arguments>
+<assign>
+<var>${columndata}</var>
+</assign>
+<msg timestamp="20171114 08:45:58.514" level="INFO">${columndata} = DOE, John</msg>
+<status status="PASS" endtime="20171114 08:45:58.514" starttime="20171114 08:45:58.476"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${ColumnDataList}</arg>
+<arg>${columndata}</arg>
+</arguments>
+<status status="PASS" endtime="20171114 08:45:58.515" starttime="20171114 08:45:58.515"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:45:58.515" starttime="20171114 08:45:58.475"></status>
+</kw>
+<kw type="foritem" name="${rowindex} = 10">
+<kw name="Get Text" library="ExtendedSelenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>//div[@id='patientSearch']//tr[${rowindex}]//td[2]</arg>
+</arguments>
+<assign>
+<var>${columndata}</var>
+</assign>
+<msg timestamp="20171114 08:45:58.558" level="INFO">${columndata} = DOE, John</msg>
+<status status="PASS" endtime="20171114 08:45:58.558" starttime="20171114 08:45:58.516"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${ColumnDataList}</arg>
+<arg>${columndata}</arg>
+</arguments>
+<status status="PASS" endtime="20171114 08:45:58.559" starttime="20171114 08:45:58.558"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:45:58.559" starttime="20171114 08:45:58.515"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:45:58.559" starttime="20171114 08:45:58.147"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${SearchContent}</arg>
+</arguments>
+<msg timestamp="20171114 08:45:58.559" level="INFO">DOE, John</msg>
+<status status="PASS" endtime="20171114 08:45:58.559" starttime="20171114 08:45:58.559"></status>
+</kw>
+<kw name="Log List" library="Collections">
+<doc>Logs the length and contents of the ``list`` using given ``level``.</doc>
+<arguments>
+<arg>${ColumnDataList}</arg>
+</arguments>
+<msg timestamp="20171114 08:45:58.559" level="INFO">List length is 10 and it contains following items:
+0: DANN, John
+1: DOE, John
+2: DOE, John
+3: DOE, John
+4: DOE, John
+5: DOE, John
+6: DOE, John
+7: DOE, John
+8: DOE, John
+9: DOE, John</msg>
+<status status="PASS" endtime="20171114 08:45:58.559" starttime="20171114 08:45:58.559"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="ExtendedSelenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20171114 08:45:58.894" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20171114 08:45:58.894" starttime="20171114 08:45:58.560"></status>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<doc>Verifies that the given item is not empty.</doc>
+<arguments>
+<arg>${ColumnDataList}</arg>
+</arguments>
+<msg timestamp="20171114 08:45:58.895" level="INFO">Length is 10</msg>
+<status status="PASS" endtime="20171114 08:45:58.895" starttime="20171114 08:45:58.894"></status>
+</kw>
+<kw name="Click Element" library="ExtendedSelenium2Library">
+<doc>Clicks an element identified by ``locator``.</doc>
+<arguments>
+<arg>${EncountersNavShortcut}</arg>
+</arguments>
+<msg timestamp="20171114 08:45:58.895" level="INFO">Clicking element '//nav[@id='mainNavigation']//a[@title='Encounters']'.</msg>
+<status status="PASS" endtime="20171114 08:45:59.944" starttime="20171114 08:45:58.895"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:45:59.944" starttime="20171114 08:45:56.220"></status>
+</kw>
+<kw name="IDCRHelpCenter" library="HomePageKeywords">
+<kw name="Click Element" library="ExtendedSelenium2Library">
+<doc>Clicks an element identified by ``locator``.</doc>
+<arguments>
+<arg>${HelpDropdown}</arg>
+</arguments>
+<msg timestamp="20171114 08:45:59.948" level="INFO">Clicking element '//i[@class="fa fa-question-circle"]'.</msg>
+<status status="PASS" endtime="20171114 08:46:00.579" starttime="20171114 08:45:59.947"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="ExtendedSelenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${HCLiveChatLink}</arg>
+<arg>15s</arg>
+</arguments>
+<status status="PASS" endtime="20171114 08:46:00.598" starttime="20171114 08:46:00.580"></status>
+</kw>
+<kw name="Click Element" library="ExtendedSelenium2Library">
+<doc>Clicks an element identified by ``locator``.</doc>
+<arguments>
+<arg>${HCLiveChatLink}</arg>
+</arguments>
+<msg timestamp="20171114 08:46:00.599" level="INFO">Clicking element '//li[text()='Live Chat']'.</msg>
+<status status="PASS" endtime="20171114 08:46:01.589" starttime="20171114 08:46:00.598"></status>
+</kw>
+<kw name="Select Window" library="ExtendedSelenium2Library">
+<doc>Selects the window matching locator and return previous window handle.</doc>
+<arguments>
+<arg>url=https://ssl.chatanexpert.com/in.php?c=52&amp;g=155&amp;fps=true&amp;s=div_intouch_adv&amp;info=true&amp;i=From%20Support&amp;exn=Jordan%20R.&amp;exa=/images/avatar/p74.jpg&amp;sup=true&amp;phoneins=1166&amp;emailins=1167&amp;formins=1168&amp;la_available=true</arg>
+</arguments>
+<status status="PASS" endtime="20171114 08:46:02.699" starttime="20171114 08:46:01.590"></status>
+</kw>
+<kw name="Element Text Should Be" library="ExtendedSelenium2Library">
+<doc>Verifies element identified by `locator` exactly contains text `expected`.</doc>
+<arguments>
+<arg>${SSLChatExpertText}</arg>
+<arg>Jordan R.</arg>
+</arguments>
+<msg timestamp="20171114 08:46:02.700" level="INFO">Verifying element '//div[@id='avatar']//span[text()='Jordan R.']' contains exactly text 'Jordan R.'.</msg>
+<status status="PASS" endtime="20171114 08:46:02.742" starttime="20171114 08:46:02.699"></status>
+</kw>
+<kw name="Close Window" library="ExtendedSelenium2Library">
+<doc>Closes currently opened pop-up window.</doc>
+<status status="PASS" endtime="20171114 08:46:02.764" starttime="20171114 08:46:02.742"></status>
+</kw>
+<kw name="Select Window" library="ExtendedSelenium2Library">
+<doc>Selects the window matching locator and return previous window handle.</doc>
+<arguments>
+<arg>title=InTouch Clinical Apps</arg>
+</arguments>
+<status status="PASS" endtime="20171114 08:46:02.791" starttime="20171114 08:46:02.764"></status>
+</kw>
+<kw name="Click Element" library="ExtendedSelenium2Library">
+<doc>Clicks an element identified by ``locator``.</doc>
+<arguments>
+<arg>${HelpDropdown}</arg>
+</arguments>
+<msg timestamp="20171114 08:46:02.792" level="INFO">Clicking element '//i[@class="fa fa-question-circle"]'.</msg>
+<status status="PASS" endtime="20171114 08:46:03.383" starttime="20171114 08:46:02.791"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="ExtendedSelenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${HCContactUs}</arg>
+<arg>15s</arg>
+</arguments>
+<status status="PASS" endtime="20171114 08:46:03.401" starttime="20171114 08:46:03.384"></status>
+</kw>
+<kw name="Click Element" library="ExtendedSelenium2Library">
+<doc>Clicks an element identified by ``locator``.</doc>
+<arguments>
+<arg>${HCContactUs}</arg>
+</arguments>
+<msg timestamp="20171114 08:46:03.402" level="INFO">Clicking element '//li[text()='Contact Us']'.</msg>
+<status status="PASS" endtime="20171114 08:46:04.725" starttime="20171114 08:46:03.401"></status>
+</kw>
+<kw name="Select Window" library="ExtendedSelenium2Library">
+<doc>Selects the window matching locator and return previous window handle.</doc>
+<arguments>
+<arg>url=https://www.intouchhealth.com/about/contact-us</arg>
+</arguments>
+<status status="PASS" endtime="20171114 08:46:05.885" starttime="20171114 08:46:04.725"></status>
+</kw>
+<kw name="Get Title" library="ExtendedSelenium2Library">
+<doc>Returns title of current page.</doc>
+<assign>
+<var>${CurrentWindowTitle}</var>
+</assign>
+<msg timestamp="20171114 08:46:05.891" level="INFO">${CurrentWindowTitle} = Contact Us | InTouch Health</msg>
+<status status="PASS" endtime="20171114 08:46:05.891" starttime="20171114 08:46:05.885"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${CurrentWindowTitle}</arg>
+<arg>Contact Us | InTouch Health</arg>
+</arguments>
+<status status="PASS" endtime="20171114 08:46:05.892" starttime="20171114 08:46:05.891"></status>
+</kw>
+<kw name="Close Window" library="ExtendedSelenium2Library">
+<doc>Closes currently opened pop-up window.</doc>
+<status status="PASS" endtime="20171114 08:46:05.920" starttime="20171114 08:46:05.892"></status>
+</kw>
+<kw name="Select Window" library="ExtendedSelenium2Library">
+<doc>Selects the window matching locator and return previous window handle.</doc>
+<arguments>
+<arg>title=InTouch Clinical Apps</arg>
+</arguments>
+<status status="PASS" endtime="20171114 08:46:05.959" starttime="20171114 08:46:05.920"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:46:05.959" starttime="20171114 08:45:59.945"></status>
+</kw>
+<kw name="ClickNewEncounterButton" library="HomePageKeywords">
+<doc>Keyword to click the New Encounter form button:</doc>
+<kw name="Click Button" library="ExtendedSelenium2Library">
+<doc>Clicks a button identified by ``locator``.</doc>
+<arguments>
+<arg>${NewEncBtn}</arg>
+</arguments>
+<msg timestamp="20171114 08:46:05.966" level="INFO">Clicking button '//section[@id='listsView']//button[text()='+ New Encounter']'.</msg>
+<status status="PASS" endtime="20171114 08:46:09.418" starttime="20171114 08:46:05.965"></status>
+</kw>
+<kw name="Page Should Contain Element" library="ExtendedSelenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>${PediatricEncounterTextElement}</arg>
+</arguments>
+<msg timestamp="20171114 08:46:09.446" level="INFO">Current page contains element '//div[@id='formModal']//span[contains(text(),'Pediatric Encounter')]'.</msg>
+<status status="PASS" endtime="20171114 08:46:09.446" starttime="20171114 08:46:09.418"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:46:09.446" starttime="20171114 08:46:05.964"></status>
+</kw>
+<doc>TestCase to check all the HomePage elements.
+
+Dependencies:
+Keywords -&gt; HomePageKeywords.
+DataFiles -&gt; HomePageData.txt
+
+1) Invoke ToggleNavigation keyword from HomePageKeywords.txt to check the functionality is working fine.
+2) Invoke Search for Patients keyword from HomePageKeywords.txt which recieves a parameter DOE, John obtained from HomePageData.txt to verify the search functionality.
+3) Invoke IDCRHelpCenter keyword from HomePageKeywords.txt which verifies all the links avaialble for Help.
+4) Click on New Encounter button by invoking ClickNewEncounterButton keyword from HomePageKeywords.txt
+</doc>
+<status status="PASS" endtime="20171114 08:46:09.447" critical="yes" starttime="20171114 08:45:54.979"></status>
+</test>
+<test id="s1-t3" name="NewEncounterForm_StandardCreationTest">
+<kw name="CloseNewEncounterForm" library="EncounterFormKeywords">
+<doc>Keyword to Close the Encounter Form:</doc>
+<kw name="Select Window" library="ExtendedSelenium2Library">
+<doc>Selects the window matching locator and return previous window handle.</doc>
+<status status="PASS" endtime="20171114 08:46:09.462" starttime="20171114 08:46:09.451"></status>
+</kw>
+<kw name="Click Element" library="ExtendedSelenium2Library">
+<doc>Clicks an element identified by ``locator``.</doc>
+<arguments>
+<arg>${CloseEncounterFormElement}</arg>
+</arguments>
+<msg timestamp="20171114 08:46:09.462" level="INFO">Clicking element '//div[@id='formModal']//span[text()='CLOSE']'.</msg>
+<status status="PASS" endtime="20171114 08:46:10.269" starttime="20171114 08:46:09.462"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:46:10.270" starttime="20171114 08:46:09.450"></status>
+</kw>
+<kw name="ClickNewEncounterButton" library="HomePageKeywords">
+<doc>Keyword to click the New Encounter form button:</doc>
+<kw name="Click Button" library="ExtendedSelenium2Library">
+<doc>Clicks a button identified by ``locator``.</doc>
+<arguments>
+<arg>${NewEncBtn}</arg>
+</arguments>
+<msg timestamp="20171114 08:46:10.281" level="INFO">Clicking button '//section[@id='listsView']//button[text()='+ New Encounter']'.</msg>
+<status status="PASS" endtime="20171114 08:46:11.785" starttime="20171114 08:46:10.280"></status>
+</kw>
+<kw name="Page Should Contain Element" library="ExtendedSelenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>${PediatricEncounterTextElement}</arg>
+</arguments>
+<msg timestamp="20171114 08:46:11.794" level="INFO">Current page contains element '//div[@id='formModal']//span[contains(text(),'Pediatric Encounter')]'.</msg>
+<status status="PASS" endtime="20171114 08:46:11.794" starttime="20171114 08:46:11.785"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:46:11.794" starttime="20171114 08:46:10.279"></status>
+</kw>
+<kw name="FillNewEncounterForm" library="EncounterFormKeywords">
+<kw name="Select Frame" library="ExtendedSelenium2Library">
+<doc>Sets frame identified by `locator` as current frame.</doc>
+<arguments>
+<arg>${IFrameElement}</arg>
+</arguments>
+<msg timestamp="20171114 08:46:11.795" level="INFO">Selecting frame '//iframe'.</msg>
+<status status="PASS" endtime="20171114 08:46:11.849" starttime="20171114 08:46:11.795"></status>
+</kw>
+<kw name="Input Text" library="ExtendedSelenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${ReferralReasonElementl}</arg>
+<arg>${ReasonForReferralText}</arg>
+</arguments>
+<msg timestamp="20171114 08:46:11.850" level="INFO">Typing text 'Sample' into text field 'activiti-reasonforreferral'</msg>
+<status status="PASS" endtime="20171114 08:46:12.396" starttime="20171114 08:46:11.849"></status>
+</kw>
+<kw name="Select From List By Label" library="ExtendedSelenium2Library">
+<doc>Selects ``*labels`` from list identified by ``locator``.</doc>
+<arguments>
+<arg>${LocationLabelElement}</arg>
+<arg>${Location}</arg>
+</arguments>
+<msg timestamp="20171114 08:46:12.397" level="INFO">Selecting label(s) 'Northern Hospital' from list 'activiti-location'.</msg>
+<status status="PASS" endtime="20171114 08:46:12.552" starttime="20171114 08:46:12.396"></status>
+</kw>
+<kw name="Input Text" library="ExtendedSelenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${FirstNameInputElement}</arg>
+<arg>${FirstName}</arg>
+</arguments>
+<msg timestamp="20171114 08:46:12.553" level="INFO">Typing text 'John' into text field 'activiti-firstname'</msg>
+<status status="PASS" endtime="20171114 08:46:12.741" starttime="20171114 08:46:12.552"></status>
+</kw>
+<kw name="Input Text" library="ExtendedSelenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${LastNameInputElement}</arg>
+<arg>${LastName}</arg>
+</arguments>
+<msg timestamp="20171114 08:46:12.742" level="INFO">Typing text 'Doe' into text field 'activiti-lastname'</msg>
+<status status="PASS" endtime="20171114 08:46:12.898" starttime="20171114 08:46:12.741"></status>
+</kw>
+<kw name="SelectGender" library="EncounterFormKeywords">
+<doc>Keyword to select the Gender radio button:</doc>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${Gender}</arg>
+</arguments>
+<msg timestamp="20171114 08:46:12.899" level="INFO">Unknown</msg>
+<status status="PASS" endtime="20171114 08:46:12.899" starttime="20171114 08:46:12.899"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${Gender}' == 'Male'</arg>
+<arg>Click Element</arg>
+<arg>${MaleGenderElement}</arg>
+<arg>ELSE IF</arg>
+<arg>'${Gender}' == 'Female'</arg>
+<arg>Click Element</arg>
+<arg>${FemaleGenderElement}</arg>
+<arg>ELSE IF</arg>
+<arg>'${Gender}' == 'Unknown'</arg>
+<arg>Click Element</arg>
+<arg>${UnknownGenderElement}</arg>
+</arguments>
+<kw name="Click Element" library="ExtendedSelenium2Library">
+<doc>Clicks an element identified by ``locator``.</doc>
+<arguments>
+<arg>${UnknownGenderElement}</arg>
+</arguments>
+<msg timestamp="20171114 08:46:12.901" level="INFO">Clicking element 'activiti-gender_2'.</msg>
+<status status="PASS" endtime="20171114 08:46:13.563" starttime="20171114 08:46:12.900"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:46:13.563" starttime="20171114 08:46:12.900"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:46:13.563" starttime="20171114 08:46:12.899"></status>
+</kw>
+<kw name="Input Text" library="ExtendedSelenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${MRNInputElement}</arg>
+<arg>${MRN}</arg>
+</arguments>
+<msg timestamp="20171114 08:46:13.564" level="INFO">Typing text '2345' into text field 'activiti-mrn'</msg>
+<status status="PASS" endtime="20171114 08:46:13.730" starttime="20171114 08:46:13.564"></status>
+</kw>
+<kw name="Input Text" library="ExtendedSelenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${WeightField_EnctrForm}</arg>
+<arg>${Weight}</arg>
+</arguments>
+<msg timestamp="20171114 08:46:13.732" level="INFO">Typing text '120' into text field '//div[@id='ctrl_weight']//input'</msg>
+<status status="PASS" endtime="20171114 08:46:13.870" starttime="20171114 08:46:13.730"></status>
+</kw>
+<kw name="Select From List By Label" library="ExtendedSelenium2Library">
+<doc>Selects ``*labels`` from list identified by ``locator``.</doc>
+<arguments>
+<arg>${SelectWeightMeasureElement}</arg>
+<arg>${WeightMeasure}</arg>
+</arguments>
+<msg timestamp="20171114 08:46:13.871" level="INFO">Selecting label(s) 'Pounds' from list 'field.id'.</msg>
+<status status="PASS" endtime="20171114 08:46:14.008" starttime="20171114 08:46:13.870"></status>
+</kw>
+<kw name="ValidateDate" library="EncounterFormKeywords">
+<arguments>
+<arg>${DOBDateNowButtonElement}</arg>
+<arg>${DOBInputFieldElement}</arg>
+<arg>${DOBNoFutureDateErrorElement}</arg>
+</arguments>
+<kw name="Click Element" library="ExtendedSelenium2Library">
+<doc>Clicks an element identified by ``locator``.</doc>
+<arguments>
+<arg>//div[@id='${dateDivText}']//following-sibling::span[2]/span</arg>
+</arguments>
+<msg timestamp="20171114 08:46:14.009" level="INFO">Clicking element '//div[@id='dateofbirthDiv']//following-sibling::span[2]/span'.</msg>
+<status status="PASS" endtime="20171114 08:46:14.666" starttime="20171114 08:46:14.009"></status>
+</kw>
+<kw name="Get Value" library="ExtendedSelenium2Library">
+<doc>Returns the value attribute of element identified by `locator`.</doc>
+<arguments>
+<arg>${DateInputID}</arg>
+</arguments>
+<assign>
+<var>${CurrentdateFromApp}</var>
+</assign>
+<msg timestamp="20171114 08:46:14.691" level="INFO">${CurrentdateFromApp} = 11/14/2017</msg>
+<status status="PASS" endtime="20171114 08:46:14.691" starttime="20171114 08:46:14.666"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${CurrentdateFromApp}=</arg>
+</arguments>
+<msg timestamp="20171114 08:46:14.692" level="INFO">11/14/2017=</msg>
+<status status="PASS" endtime="20171114 08:46:14.692" starttime="20171114 08:46:14.692"></status>
+</kw>
+<kw name="Clear Element Text" library="ExtendedSelenium2Library">
+<doc>Clears the text value of text entry element identified by `locator`.</doc>
+<arguments>
+<arg>${DateInputID}</arg>
+</arguments>
+<status status="PASS" endtime="20171114 08:46:14.730" starttime="20171114 08:46:14.692"></status>
+</kw>
+<kw name="Get Text" library="ExtendedSelenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>${TimezoneElement}</arg>
+</arguments>
+<assign>
+<var>${TimeZoneText}</var>
+</assign>
+<msg timestamp="20171114 08:46:14.786" level="INFO">${TimeZoneText} = CST</msg>
+<status status="PASS" endtime="20171114 08:46:14.786" starttime="20171114 08:46:14.731"></status>
+</kw>
+<kw name="ReturnCurrentDate" library="EncounterFormKeywords">
+<doc>Keyword which returns the current system date:</doc>
+<arguments>
+<arg>${TimeZoneText}</arg>
+</arguments>
+<assign>
+<var>${Date}</var>
+</assign>
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<arguments>
+<arg>UTC</arg>
+<arg>-6 hours</arg>
+<arg>result_format=%m/%d/%Y %H:%M</arg>
+</arguments>
+<assign>
+<var>${CSTDate}</var>
+</assign>
+<msg timestamp="20171114 08:46:14.794" level="INFO">${CSTDate} = 11/14/2017 10:46</msg>
+<status status="PASS" endtime="20171114 08:46:14.794" starttime="20171114 08:46:14.793"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${CSTDate}</arg>
+</arguments>
+<msg timestamp="20171114 08:46:14.795" level="INFO">11/14/2017 10:46</msg>
+<status status="PASS" endtime="20171114 08:46:14.795" starttime="20171114 08:46:14.794"></status>
+</kw>
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<arguments>
+<arg>UTC</arg>
+<arg>-5 hours</arg>
+<arg>result_format=%m/%d/%Y %H:%M</arg>
+</arguments>
+<assign>
+<var>${ESTDate}</var>
+</assign>
+<msg timestamp="20171114 08:46:14.796" level="INFO">${ESTDate} = 11/14/2017 11:46</msg>
+<status status="PASS" endtime="20171114 08:46:14.796" starttime="20171114 08:46:14.796"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${ESTDate}</arg>
+</arguments>
+<msg timestamp="20171114 08:46:14.797" level="INFO">11/14/2017 11:46</msg>
+<status status="PASS" endtime="20171114 08:46:14.797" starttime="20171114 08:46:14.797"></status>
+</kw>
+<kw name="Set Variable If" library="BuiltIn">
+<doc>Sets variable based on the given condition.</doc>
+<arguments>
+<arg>'${Timezone}' == 'CST'</arg>
+<arg>${CSTDate}</arg>
+<arg>'${Timezone}' == 'EST'</arg>
+<arg>${ESTDate}</arg>
+</arguments>
+<assign>
+<var>${CurrentDate}</var>
+</assign>
+<msg timestamp="20171114 08:46:14.799" level="INFO">${CurrentDate} = 11/14/2017 10:46</msg>
+<status status="PASS" endtime="20171114 08:46:14.799" starttime="20171114 08:46:14.798"></status>
+</kw>
+<msg timestamp="20171114 08:46:14.799" level="INFO">${Date} = 11/14/2017 10:46</msg>
+<status status="PASS" endtime="20171114 08:46:14.799" starttime="20171114 08:46:14.792"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${Date}</arg>
+</arguments>
+<msg timestamp="20171114 08:46:14.800" level="INFO">11/14/2017 10:46</msg>
+<status status="PASS" endtime="20171114 08:46:14.800" starttime="20171114 08:46:14.800"></status>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<doc>Converts between supported `date formats`.</doc>
+<arguments>
+<arg>${Date}</arg>
+<arg>result_format=%m/%d/%Y</arg>
+<arg>date_format=%m/%d/%Y %H:%M</arg>
+</arguments>
+<assign>
+<var>${CurrentdateFromSystem}</var>
+</assign>
+<msg timestamp="20171114 08:46:14.808" level="INFO">${CurrentdateFromSystem} = 11/14/2017</msg>
+<status status="PASS" endtime="20171114 08:46:14.808" starttime="20171114 08:46:14.801"></status>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<doc>Returns a list containing given items.</doc>
+<arguments>
+<arg>${FutureDate}</arg>
+<arg>${PastDate}</arg>
+</arguments>
+<assign>
+<var>@{DateList}</var>
+</assign>
+<msg timestamp="20171114 08:46:14.810" level="INFO">@{DateList} = [ 12/22/2034 | 12/22/2014 ]</msg>
+<status status="PASS" endtime="20171114 08:46:14.810" starttime="20171114 08:46:14.809"></status>
+</kw>
+<kw type="for" name="${ListIndex} IN [ @{DateList} ]">
+<kw type="foritem" name="${ListIndex} = 12/22/2034">
+<kw name="Subtract Date From Date" library="DateTime">
+<doc>Subtracts date from another date and returns time between.</doc>
+<arguments>
+<arg>${CurrentdateFromSystem}</arg>
+<arg>${ListIndex}</arg>
+<arg>result_format=number</arg>
+<arg>date1_format=%m/%d/%Y</arg>
+<arg>date2_format=%m/%d/%Y</arg>
+</arguments>
+<assign>
+<var>${value}</var>
+</assign>
+<msg timestamp="20171114 08:46:14.811" level="INFO">${value} = -539740800.0</msg>
+<status status="PASS" endtime="20171114 08:46:14.811" starttime="20171114 08:46:14.810"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${value}&lt;0</arg>
+<arg>Run Keywords</arg>
+<arg>InputFutureDate&amp;VerifyError</arg>
+<arg>${DateInputID}</arg>
+<arg>${datetimepickerID}</arg>
+<arg>${FutureDate}</arg>
+<arg>AND</arg>
+<arg>InputPastDate&amp;VerifyNoError</arg>
+<arg>${DateInputID}</arg>
+<arg>${datetimepickerID}</arg>
+<arg>${PastDate}</arg>
+<arg>ELSE</arg>
+<arg>Run Keyword</arg>
+<arg>InputPastDate&amp;VerifyNoError</arg>
+<arg>${DateInputID}</arg>
+<arg>${datetimepickerID}</arg>
+<arg>${PastDate}</arg>
+</arguments>
+<kw name="Run Keywords" library="BuiltIn">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>InputFutureDate&amp;VerifyError</arg>
+<arg>${DateInputID}</arg>
+<arg>${datetimepickerID}</arg>
+<arg>${FutureDate}</arg>
+<arg>AND</arg>
+<arg>InputPastDate&amp;VerifyNoError</arg>
+<arg>${DateInputID}</arg>
+<arg>${datetimepickerID}</arg>
+<arg>${PastDate}</arg>
+</arguments>
+<kw name="InputFutureDate&amp;VerifyError" library="EncounterFormKeywords">
+<doc>Keyword to Input the Future date and verify for the Error:</doc>
+<arguments>
+<arg>${DateInputID}</arg>
+<arg>${datetimepickerID}</arg>
+<arg>${FutureDate}</arg>
+</arguments>
+<kw name="Input Text" library="ExtendedSelenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${DateInputID}</arg>
+<arg>${ActualDate}</arg>
+</arguments>
+<msg timestamp="20171114 08:46:14.820" level="INFO">Typing text '12/22/2034' into text field 'activiti-dateofbirthDatetime'</msg>
+<status status="PASS" endtime="20171114 08:46:15.023" starttime="20171114 08:46:14.819"></status>
+</kw>
+<kw name="Page Should Contain Element" library="ExtendedSelenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>//datetimepicker[@id='${datetimepickerID}']//span[text()='No future dates allowed.']</arg>
+</arguments>
+<msg timestamp="20171114 08:46:15.044" level="INFO">Current page contains element '//datetimepicker[@id='ctrl_dateofbirth']//span[text()='No future dates allowed.']'.</msg>
+<status status="PASS" endtime="20171114 08:46:15.044" starttime="20171114 08:46:15.023"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:46:15.044" starttime="20171114 08:46:14.818"></status>
+</kw>
+<kw name="InputPastDate&amp;VerifyNoError" library="EncounterFormKeywords">
+<doc>Keyword to Input the Past date and verify no Error is displayed:</doc>
+<arguments>
+<arg>${DateInputID}</arg>
+<arg>${datetimepickerID}</arg>
+<arg>${PastDate}</arg>
+</arguments>
+<kw name="Input Text" library="ExtendedSelenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${DateInputID}</arg>
+<arg>${ActualDate}</arg>
+</arguments>
+<msg timestamp="20171114 08:46:15.048" level="INFO">Typing text '12/22/2014' into text field 'activiti-dateofbirthDatetime'</msg>
+<status status="PASS" endtime="20171114 08:46:15.202" starttime="20171114 08:46:15.048"></status>
+</kw>
+<kw name="Page Should Not Contain Element" library="ExtendedSelenium2Library">
+<doc>Verifies element identified by `locator` is not found on the current page.</doc>
+<arguments>
+<arg>//datetimepicker[@id='${datetimepickerID}']//span[text()='No future dates allowed.']</arg>
+</arguments>
+<msg timestamp="20171114 08:46:30.263" level="INFO">Current page does not contain element '//datetimepicker[@id='ctrl_dateofbirth']//span[text()='No future dates allowed.']'.</msg>
+<status status="PASS" endtime="20171114 08:46:30.263" starttime="20171114 08:46:15.202"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:46:30.265" starttime="20171114 08:46:15.048"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:46:30.265" starttime="20171114 08:46:14.812"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:46:30.265" starttime="20171114 08:46:14.812"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:46:30.265" starttime="20171114 08:46:14.810"></status>
+</kw>
+<kw type="foritem" name="${ListIndex} = 12/22/2014">
+<kw name="Subtract Date From Date" library="DateTime">
+<doc>Subtracts date from another date and returns time between.</doc>
+<arguments>
+<arg>${CurrentdateFromSystem}</arg>
+<arg>${ListIndex}</arg>
+<arg>result_format=number</arg>
+<arg>date1_format=%m/%d/%Y</arg>
+<arg>date2_format=%m/%d/%Y</arg>
+</arguments>
+<assign>
+<var>${value}</var>
+</assign>
+<msg timestamp="20171114 08:46:30.267" level="INFO">${value} = 91411200.0</msg>
+<status status="PASS" endtime="20171114 08:46:30.267" starttime="20171114 08:46:30.266"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${value}&lt;0</arg>
+<arg>Run Keywords</arg>
+<arg>InputFutureDate&amp;VerifyError</arg>
+<arg>${DateInputID}</arg>
+<arg>${datetimepickerID}</arg>
+<arg>${FutureDate}</arg>
+<arg>AND</arg>
+<arg>InputPastDate&amp;VerifyNoError</arg>
+<arg>${DateInputID}</arg>
+<arg>${datetimepickerID}</arg>
+<arg>${PastDate}</arg>
+<arg>ELSE</arg>
+<arg>Run Keyword</arg>
+<arg>InputPastDate&amp;VerifyNoError</arg>
+<arg>${DateInputID}</arg>
+<arg>${datetimepickerID}</arg>
+<arg>${PastDate}</arg>
+</arguments>
+<kw name="Run Keyword" library="BuiltIn">
+<doc>Executes the given keyword with the given arguments.</doc>
+<arguments>
+<arg>InputPastDate&amp;VerifyNoError</arg>
+<arg>${DateInputID}</arg>
+<arg>${datetimepickerID}</arg>
+<arg>${PastDate}</arg>
+</arguments>
+<kw name="InputPastDate&amp;VerifyNoError" library="EncounterFormKeywords">
+<doc>Keyword to Input the Past date and verify no Error is displayed:</doc>
+<arguments>
+<arg>${DateInputID}</arg>
+<arg>${datetimepickerID}</arg>
+<arg>${PastDate}</arg>
+</arguments>
+<kw name="Input Text" library="ExtendedSelenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${DateInputID}</arg>
+<arg>${ActualDate}</arg>
+</arguments>
+<msg timestamp="20171114 08:46:30.282" level="INFO">Typing text '12/22/2014' into text field 'activiti-dateofbirthDatetime'</msg>
+<status status="PASS" endtime="20171114 08:46:30.444" starttime="20171114 08:46:30.281"></status>
+</kw>
+<kw name="Page Should Not Contain Element" library="ExtendedSelenium2Library">
+<doc>Verifies element identified by `locator` is not found on the current page.</doc>
+<arguments>
+<arg>//datetimepicker[@id='${datetimepickerID}']//span[text()='No future dates allowed.']</arg>
+</arguments>
+<msg timestamp="20171114 08:46:45.476" level="INFO">Current page does not contain element '//datetimepicker[@id='ctrl_dateofbirth']//span[text()='No future dates allowed.']'.</msg>
+<status status="PASS" endtime="20171114 08:46:45.477" starttime="20171114 08:46:30.444"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:46:45.477" starttime="20171114 08:46:30.280"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:46:45.477" starttime="20171114 08:46:30.271"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:46:45.478" starttime="20171114 08:46:30.269"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:46:45.478" starttime="20171114 08:46:30.266"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:46:45.478" starttime="20171114 08:46:14.810"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:46:45.478" starttime="20171114 08:46:14.008"></status>
+</kw>
+<kw name="TeleMedConsentOption" library="EncounterFormKeywords">
+<doc>Keyword to set the 'Parent / Guardian Consents to Tele-Medicine' option:</doc>
+<arguments>
+<arg>${ConsentOption}</arg>
+</arguments>
+<kw name="Scroll Element Into View" library="ExtendedSelenium2Library">
+<doc>Scrolls an element from given ``locator`` into view.</doc>
+<arguments>
+<arg>//div[@id='ctrl_telemedicineconsent']//label[text()='${value}']</arg>
+</arguments>
+<msg timestamp="20171114 08:46:45.486" level="INFO">Scrolling element '//div[@id='ctrl_telemedicineconsent']//label[text()='Yes']' into view.</msg>
+<status status="PASS" endtime="20171114 08:46:45.515" starttime="20171114 08:46:45.485"></status>
+</kw>
+<kw name="Click Element" library="ExtendedSelenium2Library">
+<doc>Clicks an element identified by ``locator``.</doc>
+<arguments>
+<arg>//div[@id='ctrl_telemedicineconsent']//label[text()='${value}']</arg>
+</arguments>
+<msg timestamp="20171114 08:46:45.516" level="INFO">Clicking element '//div[@id='ctrl_telemedicineconsent']//label[text()='Yes']'.</msg>
+<status status="PASS" endtime="20171114 08:46:46.191" starttime="20171114 08:46:45.516"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:46:46.191" starttime="20171114 08:46:45.485"></status>
+</kw>
+<kw name="ConsultTypeOption" library="EncounterFormKeywords">
+<doc>Keyword to set the Consult Type option:</doc>
+<arguments>
+<arg>${ConsultType}</arg>
+</arguments>
+<kw name="Scroll Element Into View" library="ExtendedSelenium2Library">
+<doc>Scrolls an element from given ``locator`` into view.</doc>
+<arguments>
+<arg>//div[@id='ctrl_consulttype']//label[text()='${value}']</arg>
+</arguments>
+<msg timestamp="20171114 08:46:46.194" level="INFO">Scrolling element '//div[@id='ctrl_consulttype']//label[text()='Cardiology']' into view.</msg>
+<status status="PASS" endtime="20171114 08:46:46.217" starttime="20171114 08:46:46.193"></status>
+</kw>
+<kw name="Click Element" library="ExtendedSelenium2Library">
+<doc>Clicks an element identified by ``locator``.</doc>
+<arguments>
+<arg>//div[@id='ctrl_consulttype']//label[text()='${value}']</arg>
+</arguments>
+<msg timestamp="20171114 08:46:46.218" level="INFO">Clicking element '//div[@id='ctrl_consulttype']//label[text()='Cardiology']'.</msg>
+<status status="PASS" endtime="20171114 08:46:46.854" starttime="20171114 08:46:46.218"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:46:46.854" starttime="20171114 08:46:46.193"></status>
+</kw>
+<kw name="Scroll Element Into View" library="ExtendedSelenium2Library">
+<doc>Scrolls an element from given ``locator`` into view.</doc>
+<arguments>
+<arg>${RefNeonatologistElement}</arg>
+</arguments>
+<msg timestamp="20171114 08:46:46.855" level="INFO">Scrolling element 'activiti-referringneonatologist' into view.</msg>
+<status status="PASS" endtime="20171114 08:46:46.884" starttime="20171114 08:46:46.855"></status>
+</kw>
+<kw name="Input Text" library="ExtendedSelenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${RefNeonatologistElement}</arg>
+<arg>${RefNeonatologist}</arg>
+</arguments>
+<msg timestamp="20171114 08:46:46.884" level="INFO">Typing text 'Deb Pat' into text field 'activiti-referringneonatologist'</msg>
+<status status="PASS" endtime="20171114 08:46:47.054" starttime="20171114 08:46:46.884"></status>
+</kw>
+<kw name="ValidateDate&amp;Time" library="EncounterFormKeywords">
+<arguments>
+<arg>${AdmisssionTimeDateTimeNowButtonElement}</arg>
+<arg>${AdmisssionTimeInputFieldElement}</arg>
+<arg>${AdmissionTimeNoFutureDateErrorElement}</arg>
+</arguments>
+<kw name="Click Element" library="ExtendedSelenium2Library">
+<doc>Clicks an element identified by ``locator``.</doc>
+<arguments>
+<arg>//div[@id='${DateTimeDivText}']//following-sibling::span[2]/span</arg>
+</arguments>
+<msg timestamp="20171114 08:46:47.056" level="INFO">Clicking element '//div[@id='admissiondateDiv']//following-sibling::span[2]/span'.</msg>
+<status status="PASS" endtime="20171114 08:46:47.741" starttime="20171114 08:46:47.055"></status>
+</kw>
+<kw name="Get Value" library="ExtendedSelenium2Library">
+<doc>Returns the value attribute of element identified by `locator`.</doc>
+<arguments>
+<arg>${DateTimeInputID}</arg>
+</arguments>
+<assign>
+<var>${CurrentDateTime}</var>
+</assign>
+<msg timestamp="20171114 08:46:47.766" level="INFO">${CurrentDateTime} = 11/14/2017 10:46</msg>
+<status status="PASS" endtime="20171114 08:46:47.766" starttime="20171114 08:46:47.741"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${CurrentDateTime}</arg>
+</arguments>
+<msg timestamp="20171114 08:46:47.767" level="INFO">11/14/2017 10:46</msg>
+<status status="PASS" endtime="20171114 08:46:47.767" starttime="20171114 08:46:47.766"></status>
+</kw>
+<kw name="Clear Element Text" library="ExtendedSelenium2Library">
+<doc>Clears the text value of text entry element identified by `locator`.</doc>
+<arguments>
+<arg>${DateTimeInputID}</arg>
+</arguments>
+<status status="PASS" endtime="20171114 08:46:47.805" starttime="20171114 08:46:47.767"></status>
+</kw>
+<kw name="Get Text" library="ExtendedSelenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>${TimezoneElement}</arg>
+</arguments>
+<assign>
+<var>${TimeZoneText}</var>
+</assign>
+<msg timestamp="20171114 08:46:47.854" level="INFO">${TimeZoneText} = CST</msg>
+<status status="PASS" endtime="20171114 08:46:47.854" starttime="20171114 08:46:47.805"></status>
+</kw>
+<kw name="ReturnCurrentDate" library="EncounterFormKeywords">
+<doc>Keyword which returns the current system date:</doc>
+<arguments>
+<arg>${TimeZoneText}</arg>
+</arguments>
+<assign>
+<var>${CurrentDateFromSystem}</var>
+</assign>
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<arguments>
+<arg>UTC</arg>
+<arg>-6 hours</arg>
+<arg>result_format=%m/%d/%Y %H:%M</arg>
+</arguments>
+<assign>
+<var>${CSTDate}</var>
+</assign>
+<msg timestamp="20171114 08:46:47.859" level="INFO">${CSTDate} = 11/14/2017 10:46</msg>
+<status status="PASS" endtime="20171114 08:46:47.859" starttime="20171114 08:46:47.858"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${CSTDate}</arg>
+</arguments>
+<msg timestamp="20171114 08:46:47.859" level="INFO">11/14/2017 10:46</msg>
+<status status="PASS" endtime="20171114 08:46:47.859" starttime="20171114 08:46:47.859"></status>
+</kw>
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<arguments>
+<arg>UTC</arg>
+<arg>-5 hours</arg>
+<arg>result_format=%m/%d/%Y %H:%M</arg>
+</arguments>
+<assign>
+<var>${ESTDate}</var>
+</assign>
+<msg timestamp="20171114 08:46:47.860" level="INFO">${ESTDate} = 11/14/2017 11:46</msg>
+<status status="PASS" endtime="20171114 08:46:47.860" starttime="20171114 08:46:47.859"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${ESTDate}</arg>
+</arguments>
+<msg timestamp="20171114 08:46:47.861" level="INFO">11/14/2017 11:46</msg>
+<status status="PASS" endtime="20171114 08:46:47.861" starttime="20171114 08:46:47.860"></status>
+</kw>
+<kw name="Set Variable If" library="BuiltIn">
+<doc>Sets variable based on the given condition.</doc>
+<arguments>
+<arg>'${Timezone}' == 'CST'</arg>
+<arg>${CSTDate}</arg>
+<arg>'${Timezone}' == 'EST'</arg>
+<arg>${ESTDate}</arg>
+</arguments>
+<assign>
+<var>${CurrentDate}</var>
+</assign>
+<msg timestamp="20171114 08:46:47.862" level="INFO">${CurrentDate} = 11/14/2017 10:46</msg>
+<status status="PASS" endtime="20171114 08:46:47.862" starttime="20171114 08:46:47.861"></status>
+</kw>
+<msg timestamp="20171114 08:46:47.863" level="INFO">${CurrentDateFromSystem} = 11/14/2017 10:46</msg>
+<status status="PASS" endtime="20171114 08:46:47.863" starttime="20171114 08:46:47.857"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${CurrentDateFromSystem}</arg>
+</arguments>
+<msg timestamp="20171114 08:46:47.863" level="INFO">11/14/2017 10:46</msg>
+<status status="PASS" endtime="20171114 08:46:47.864" starttime="20171114 08:46:47.863"></status>
+</kw>
+<kw name="Add Time To Date" library="DateTime">
+<doc>Adds time to date and returns the resulting date.</doc>
+<arguments>
+<arg>${CurrentDateTime}</arg>
+<arg>01:00:00</arg>
+<arg>result_format=%m/%d/%Y %H:%M</arg>
+<arg>date_format=%m/%d/%Y %H:%M</arg>
+</arguments>
+<assign>
+<var>${InvalidTime1}</var>
+</assign>
+<msg timestamp="20171114 08:46:47.865" level="INFO">${InvalidTime1} = 11/14/2017 11:46</msg>
+<status status="PASS" endtime="20171114 08:46:47.865" starttime="20171114 08:46:47.864"></status>
+</kw>
+<kw name="Add Time To Date" library="DateTime">
+<doc>Adds time to date and returns the resulting date.</doc>
+<arguments>
+<arg>${CurrentDateTime}</arg>
+<arg>00:30:00</arg>
+<arg>result_format=%m/%d/%Y %H:%M</arg>
+<arg>date_format=%m/%d/%Y %H:%M</arg>
+</arguments>
+<assign>
+<var>${InvalidTime2}</var>
+</assign>
+<msg timestamp="20171114 08:46:47.866" level="INFO">${InvalidTime2} = 11/14/2017 11:16</msg>
+<status status="PASS" endtime="20171114 08:46:47.867" starttime="20171114 08:46:47.865"></status>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<doc>Returns a list containing given items.</doc>
+<arguments>
+<arg>${FutureDate&amp;Time}</arg>
+<arg>${PastDate&amp;Time}</arg>
+<arg>${InvalidTime1}</arg>
+<arg>${InvalidTime2}</arg>
+</arguments>
+<assign>
+<var>@{DateTimeList}</var>
+</assign>
+<msg timestamp="20171114 08:46:47.868" level="INFO">@{DateTimeList} = [ 11/22/2034 10:30 | 11/22/2014 10:30 | 11/14/2017 11:46 | 11/14/2017 11:16 ]</msg>
+<status status="PASS" endtime="20171114 08:46:47.868" starttime="20171114 08:46:47.867"></status>
+</kw>
+<kw type="for" name="${ListIndex} IN [ @{DateTimeList} ]">
+<kw type="foritem" name="${ListIndex} = 11/22/2034 10:30">
+<kw name="Subtract Date From Date" library="DateTime">
+<doc>Subtracts date from another date and returns time between.</doc>
+<arguments>
+<arg>${CurrentDateFromSystem}</arg>
+<arg>${ListIndex}</arg>
+<arg>result_format=number</arg>
+<arg>date1_format=%m/%d/%Y %H:%M</arg>
+<arg>date2_format=%m/%d/%Y %H:%M</arg>
+</arguments>
+<assign>
+<var>${value}</var>
+</assign>
+<msg timestamp="20171114 08:46:47.869" level="INFO">${value} = -537147840.0</msg>
+<status status="PASS" endtime="20171114 08:46:47.869" starttime="20171114 08:46:47.868"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${value}&lt;0</arg>
+<arg>Run Keywords</arg>
+<arg>InputFutureDate&amp;VerifyError</arg>
+<arg>${DateTimeInputID}</arg>
+<arg>${datetimepickerID}</arg>
+<arg>${FutureDate&amp;time}</arg>
+<arg>AND</arg>
+<arg>InputPastDate&amp;VerifyNoError</arg>
+<arg>${DateTimeInputID}</arg>
+<arg>${datetimepickerID}</arg>
+<arg>${PastDate&amp;Time}</arg>
+<arg>ELSE</arg>
+<arg>Run Keyword</arg>
+<arg>InputPastDate&amp;VerifyNoError</arg>
+<arg>${DateTimeInputID}</arg>
+<arg>${datetimepickerID}</arg>
+<arg>${PastDate&amp;Time}</arg>
+</arguments>
+<kw name="Run Keywords" library="BuiltIn">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>InputFutureDate&amp;VerifyError</arg>
+<arg>${DateTimeInputID}</arg>
+<arg>${datetimepickerID}</arg>
+<arg>${FutureDate&amp;time}</arg>
+<arg>AND</arg>
+<arg>InputPastDate&amp;VerifyNoError</arg>
+<arg>${DateTimeInputID}</arg>
+<arg>${datetimepickerID}</arg>
+<arg>${PastDate&amp;Time}</arg>
+</arguments>
+<kw name="InputFutureDate&amp;VerifyError" library="EncounterFormKeywords">
+<doc>Keyword to Input the Future date and verify for the Error:</doc>
+<arguments>
+<arg>${DateTimeInputID}</arg>
+<arg>${datetimepickerID}</arg>
+<arg>${FutureDate&amp;time}</arg>
+</arguments>
+<kw name="Input Text" library="ExtendedSelenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${DateInputID}</arg>
+<arg>${ActualDate}</arg>
+</arguments>
+<msg timestamp="20171114 08:46:47.878" level="INFO">Typing text '11/22/2034 10:30' into text field 'activiti-admissiondateDatetime'</msg>
+<status status="PASS" endtime="20171114 08:46:48.107" starttime="20171114 08:46:47.878"></status>
+</kw>
+<kw name="Page Should Contain Element" library="ExtendedSelenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>//datetimepicker[@id='${datetimepickerID}']//span[text()='No future dates allowed.']</arg>
+</arguments>
+<msg timestamp="20171114 08:46:48.125" level="INFO">Current page contains element '//datetimepicker[@id='ctrl_admissiondate']//span[text()='No future dates allowed.']'.</msg>
+<status status="PASS" endtime="20171114 08:46:48.125" starttime="20171114 08:46:48.107"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:46:48.125" starttime="20171114 08:46:47.877"></status>
+</kw>
+<kw name="InputPastDate&amp;VerifyNoError" library="EncounterFormKeywords">
+<doc>Keyword to Input the Past date and verify no Error is displayed:</doc>
+<arguments>
+<arg>${DateTimeInputID}</arg>
+<arg>${datetimepickerID}</arg>
+<arg>${PastDate&amp;Time}</arg>
+</arguments>
+<kw name="Input Text" library="ExtendedSelenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${DateInputID}</arg>
+<arg>${ActualDate}</arg>
+</arguments>
+<msg timestamp="20171114 08:46:48.132" level="INFO">Typing text '11/22/2014 10:30' into text field 'activiti-admissiondateDatetime'</msg>
+<status status="PASS" endtime="20171114 08:46:48.328" starttime="20171114 08:46:48.131"></status>
+</kw>
+<kw name="Page Should Not Contain Element" library="ExtendedSelenium2Library">
+<doc>Verifies element identified by `locator` is not found on the current page.</doc>
+<arguments>
+<arg>//datetimepicker[@id='${datetimepickerID}']//span[text()='No future dates allowed.']</arg>
+</arguments>
+<msg timestamp="20171114 08:47:03.382" level="INFO">Current page does not contain element '//datetimepicker[@id='ctrl_admissiondate']//span[text()='No future dates allowed.']'.</msg>
+<status status="PASS" endtime="20171114 08:47:03.382" starttime="20171114 08:46:48.329"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:47:03.383" starttime="20171114 08:46:48.131"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:47:03.383" starttime="20171114 08:46:47.870"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:47:03.383" starttime="20171114 08:46:47.869"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:47:03.383" starttime="20171114 08:46:47.868"></status>
+</kw>
+<kw type="foritem" name="${ListIndex} = 11/22/2014 10:30">
+<kw name="Subtract Date From Date" library="DateTime">
+<doc>Subtracts date from another date and returns time between.</doc>
+<arguments>
+<arg>${CurrentDateFromSystem}</arg>
+<arg>${ListIndex}</arg>
+<arg>result_format=number</arg>
+<arg>date1_format=%m/%d/%Y %H:%M</arg>
+<arg>date2_format=%m/%d/%Y %H:%M</arg>
+</arguments>
+<assign>
+<var>${value}</var>
+</assign>
+<msg timestamp="20171114 08:47:03.386" level="INFO">${value} = 94004160.0</msg>
+<status status="PASS" endtime="20171114 08:47:03.387" starttime="20171114 08:47:03.384"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${value}&lt;0</arg>
+<arg>Run Keywords</arg>
+<arg>InputFutureDate&amp;VerifyError</arg>
+<arg>${DateTimeInputID}</arg>
+<arg>${datetimepickerID}</arg>
+<arg>${FutureDate&amp;time}</arg>
+<arg>AND</arg>
+<arg>InputPastDate&amp;VerifyNoError</arg>
+<arg>${DateTimeInputID}</arg>
+<arg>${datetimepickerID}</arg>
+<arg>${PastDate&amp;Time}</arg>
+<arg>ELSE</arg>
+<arg>Run Keyword</arg>
+<arg>InputPastDate&amp;VerifyNoError</arg>
+<arg>${DateTimeInputID}</arg>
+<arg>${datetimepickerID}</arg>
+<arg>${PastDate&amp;Time}</arg>
+</arguments>
+<kw name="Run Keyword" library="BuiltIn">
+<doc>Executes the given keyword with the given arguments.</doc>
+<arguments>
+<arg>InputPastDate&amp;VerifyNoError</arg>
+<arg>${DateTimeInputID}</arg>
+<arg>${datetimepickerID}</arg>
+<arg>${PastDate&amp;Time}</arg>
+</arguments>
+<kw name="InputPastDate&amp;VerifyNoError" library="EncounterFormKeywords">
+<doc>Keyword to Input the Past date and verify no Error is displayed:</doc>
+<arguments>
+<arg>${DateTimeInputID}</arg>
+<arg>${datetimepickerID}</arg>
+<arg>${PastDate&amp;Time}</arg>
+</arguments>
+<kw name="Input Text" library="ExtendedSelenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${DateInputID}</arg>
+<arg>${ActualDate}</arg>
+</arguments>
+<msg timestamp="20171114 08:47:03.403" level="INFO">Typing text '11/22/2014 10:30' into text field 'activiti-admissiondateDatetime'</msg>
+<status status="PASS" endtime="20171114 08:47:03.649" starttime="20171114 08:47:03.403"></status>
+</kw>
+<kw name="Page Should Not Contain Element" library="ExtendedSelenium2Library">
+<doc>Verifies element identified by `locator` is not found on the current page.</doc>
+<arguments>
+<arg>//datetimepicker[@id='${datetimepickerID}']//span[text()='No future dates allowed.']</arg>
+</arguments>
+<msg timestamp="20171114 08:47:18.689" level="INFO">Current page does not contain element '//datetimepicker[@id='ctrl_admissiondate']//span[text()='No future dates allowed.']'.</msg>
+<status status="PASS" endtime="20171114 08:47:18.689" starttime="20171114 08:47:03.649"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:47:18.690" starttime="20171114 08:47:03.402"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:47:18.690" starttime="20171114 08:47:03.389"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:47:18.690" starttime="20171114 08:47:03.387"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:47:18.690" starttime="20171114 08:47:03.384"></status>
+</kw>
+<kw type="foritem" name="${ListIndex} = 11/14/2017 11:46">
+<kw name="Subtract Date From Date" library="DateTime">
+<doc>Subtracts date from another date and returns time between.</doc>
+<arguments>
+<arg>${CurrentDateFromSystem}</arg>
+<arg>${ListIndex}</arg>
+<arg>result_format=number</arg>
+<arg>date1_format=%m/%d/%Y %H:%M</arg>
+<arg>date2_format=%m/%d/%Y %H:%M</arg>
+</arguments>
+<assign>
+<var>${value}</var>
+</assign>
+<msg timestamp="20171114 08:47:18.693" level="INFO">${value} = -3600.0</msg>
+<status status="PASS" endtime="20171114 08:47:18.693" starttime="20171114 08:47:18.691"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${value}&lt;0</arg>
+<arg>Run Keywords</arg>
+<arg>InputFutureDate&amp;VerifyError</arg>
+<arg>${DateTimeInputID}</arg>
+<arg>${datetimepickerID}</arg>
+<arg>${FutureDate&amp;time}</arg>
+<arg>AND</arg>
+<arg>InputPastDate&amp;VerifyNoError</arg>
+<arg>${DateTimeInputID}</arg>
+<arg>${datetimepickerID}</arg>
+<arg>${PastDate&amp;Time}</arg>
+<arg>ELSE</arg>
+<arg>Run Keyword</arg>
+<arg>InputPastDate&amp;VerifyNoError</arg>
+<arg>${DateTimeInputID}</arg>
+<arg>${datetimepickerID}</arg>
+<arg>${PastDate&amp;Time}</arg>
+</arguments>
+<kw name="Run Keywords" library="BuiltIn">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>InputFutureDate&amp;VerifyError</arg>
+<arg>${DateTimeInputID}</arg>
+<arg>${datetimepickerID}</arg>
+<arg>${FutureDate&amp;time}</arg>
+<arg>AND</arg>
+<arg>InputPastDate&amp;VerifyNoError</arg>
+<arg>${DateTimeInputID}</arg>
+<arg>${datetimepickerID}</arg>
+<arg>${PastDate&amp;Time}</arg>
+</arguments>
+<kw name="InputFutureDate&amp;VerifyError" library="EncounterFormKeywords">
+<doc>Keyword to Input the Future date and verify for the Error:</doc>
+<arguments>
+<arg>${DateTimeInputID}</arg>
+<arg>${datetimepickerID}</arg>
+<arg>${FutureDate&amp;time}</arg>
+</arguments>
+<kw name="Input Text" library="ExtendedSelenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${DateInputID}</arg>
+<arg>${ActualDate}</arg>
+</arguments>
+<msg timestamp="20171114 08:47:18.708" level="INFO">Typing text '11/22/2034 10:30' into text field 'activiti-admissiondateDatetime'</msg>
+<status status="PASS" endtime="20171114 08:47:18.904" starttime="20171114 08:47:18.708"></status>
+</kw>
+<kw name="Page Should Contain Element" library="ExtendedSelenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>//datetimepicker[@id='${datetimepickerID}']//span[text()='No future dates allowed.']</arg>
+</arguments>
+<msg timestamp="20171114 08:47:18.913" level="INFO">Current page contains element '//datetimepicker[@id='ctrl_admissiondate']//span[text()='No future dates allowed.']'.</msg>
+<status status="PASS" endtime="20171114 08:47:18.913" starttime="20171114 08:47:18.904"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:47:18.913" starttime="20171114 08:47:18.707"></status>
+</kw>
+<kw name="InputPastDate&amp;VerifyNoError" library="EncounterFormKeywords">
+<doc>Keyword to Input the Past date and verify no Error is displayed:</doc>
+<arguments>
+<arg>${DateTimeInputID}</arg>
+<arg>${datetimepickerID}</arg>
+<arg>${PastDate&amp;Time}</arg>
+</arguments>
+<kw name="Input Text" library="ExtendedSelenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${DateInputID}</arg>
+<arg>${ActualDate}</arg>
+</arguments>
+<msg timestamp="20171114 08:47:18.920" level="INFO">Typing text '11/22/2014 10:30' into text field 'activiti-admissiondateDatetime'</msg>
+<status status="PASS" endtime="20171114 08:47:19.115" starttime="20171114 08:47:18.920"></status>
+</kw>
+<kw name="Page Should Not Contain Element" library="ExtendedSelenium2Library">
+<doc>Verifies element identified by `locator` is not found on the current page.</doc>
+<arguments>
+<arg>//datetimepicker[@id='${datetimepickerID}']//span[text()='No future dates allowed.']</arg>
+</arguments>
+<msg timestamp="20171114 08:47:34.151" level="INFO">Current page does not contain element '//datetimepicker[@id='ctrl_admissiondate']//span[text()='No future dates allowed.']'.</msg>
+<status status="PASS" endtime="20171114 08:47:34.152" starttime="20171114 08:47:19.115"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:47:34.152" starttime="20171114 08:47:18.919"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:47:34.152" starttime="20171114 08:47:18.695"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:47:34.152" starttime="20171114 08:47:18.694"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:47:34.152" starttime="20171114 08:47:18.691"></status>
+</kw>
+<kw type="foritem" name="${ListIndex} = 11/14/2017 11:16">
+<kw name="Subtract Date From Date" library="DateTime">
+<doc>Subtracts date from another date and returns time between.</doc>
+<arguments>
+<arg>${CurrentDateFromSystem}</arg>
+<arg>${ListIndex}</arg>
+<arg>result_format=number</arg>
+<arg>date1_format=%m/%d/%Y %H:%M</arg>
+<arg>date2_format=%m/%d/%Y %H:%M</arg>
+</arguments>
+<assign>
+<var>${value}</var>
+</assign>
+<msg timestamp="20171114 08:47:34.153" level="INFO">${value} = -1800.0</msg>
+<status status="PASS" endtime="20171114 08:47:34.153" starttime="20171114 08:47:34.152"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${value}&lt;0</arg>
+<arg>Run Keywords</arg>
+<arg>InputFutureDate&amp;VerifyError</arg>
+<arg>${DateTimeInputID}</arg>
+<arg>${datetimepickerID}</arg>
+<arg>${FutureDate&amp;time}</arg>
+<arg>AND</arg>
+<arg>InputPastDate&amp;VerifyNoError</arg>
+<arg>${DateTimeInputID}</arg>
+<arg>${datetimepickerID}</arg>
+<arg>${PastDate&amp;Time}</arg>
+<arg>ELSE</arg>
+<arg>Run Keyword</arg>
+<arg>InputPastDate&amp;VerifyNoError</arg>
+<arg>${DateTimeInputID}</arg>
+<arg>${datetimepickerID}</arg>
+<arg>${PastDate&amp;Time}</arg>
+</arguments>
+<kw name="Run Keywords" library="BuiltIn">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>InputFutureDate&amp;VerifyError</arg>
+<arg>${DateTimeInputID}</arg>
+<arg>${datetimepickerID}</arg>
+<arg>${FutureDate&amp;time}</arg>
+<arg>AND</arg>
+<arg>InputPastDate&amp;VerifyNoError</arg>
+<arg>${DateTimeInputID}</arg>
+<arg>${datetimepickerID}</arg>
+<arg>${PastDate&amp;Time}</arg>
+</arguments>
+<kw name="InputFutureDate&amp;VerifyError" library="EncounterFormKeywords">
+<doc>Keyword to Input the Future date and verify for the Error:</doc>
+<arguments>
+<arg>${DateTimeInputID}</arg>
+<arg>${datetimepickerID}</arg>
+<arg>${FutureDate&amp;time}</arg>
+</arguments>
+<kw name="Input Text" library="ExtendedSelenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${DateInputID}</arg>
+<arg>${ActualDate}</arg>
+</arguments>
+<msg timestamp="20171114 08:47:34.162" level="INFO">Typing text '11/22/2034 10:30' into text field 'activiti-admissiondateDatetime'</msg>
+<status status="PASS" endtime="20171114 08:47:34.435" starttime="20171114 08:47:34.162"></status>
+</kw>
+<kw name="Page Should Contain Element" library="ExtendedSelenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>//datetimepicker[@id='${datetimepickerID}']//span[text()='No future dates allowed.']</arg>
+</arguments>
+<msg timestamp="20171114 08:47:34.445" level="INFO">Current page contains element '//datetimepicker[@id='ctrl_admissiondate']//span[text()='No future dates allowed.']'.</msg>
+<status status="PASS" endtime="20171114 08:47:34.445" starttime="20171114 08:47:34.436"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:47:34.445" starttime="20171114 08:47:34.161"></status>
+</kw>
+<kw name="InputPastDate&amp;VerifyNoError" library="EncounterFormKeywords">
+<doc>Keyword to Input the Past date and verify no Error is displayed:</doc>
+<arguments>
+<arg>${DateTimeInputID}</arg>
+<arg>${datetimepickerID}</arg>
+<arg>${PastDate&amp;Time}</arg>
+</arguments>
+<kw name="Input Text" library="ExtendedSelenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${DateInputID}</arg>
+<arg>${ActualDate}</arg>
+</arguments>
+<msg timestamp="20171114 08:47:34.453" level="INFO">Typing text '11/22/2014 10:30' into text field 'activiti-admissiondateDatetime'</msg>
+<status status="PASS" endtime="20171114 08:47:34.655" starttime="20171114 08:47:34.452"></status>
+</kw>
+<kw name="Page Should Not Contain Element" library="ExtendedSelenium2Library">
+<doc>Verifies element identified by `locator` is not found on the current page.</doc>
+<arguments>
+<arg>//datetimepicker[@id='${datetimepickerID}']//span[text()='No future dates allowed.']</arg>
+</arguments>
+<msg timestamp="20171114 08:47:49.682" level="INFO">Current page does not contain element '//datetimepicker[@id='ctrl_admissiondate']//span[text()='No future dates allowed.']'.</msg>
+<status status="PASS" endtime="20171114 08:47:49.682" starttime="20171114 08:47:34.656"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:47:49.683" starttime="20171114 08:47:34.452"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:47:49.683" starttime="20171114 08:47:34.154"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:47:49.683" starttime="20171114 08:47:34.153"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:47:49.684" starttime="20171114 08:47:34.152"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:47:49.684" starttime="20171114 08:46:47.868"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:47:49.684" starttime="20171114 08:46:47.054"></status>
+</kw>
+<kw name="ValidateDate&amp;Time" library="EncounterFormKeywords">
+<arguments>
+<arg>${ConsultTimeDateTimeNowButtonElement}</arg>
+<arg>${ConsultTimeInputFieldElement}</arg>
+<arg>${ConsultTimeNoFutureDateErrorElement}</arg>
+</arguments>
+<kw name="Click Element" library="ExtendedSelenium2Library">
+<doc>Clicks an element identified by ``locator``.</doc>
+<arguments>
+<arg>//div[@id='${DateTimeDivText}']//following-sibling::span[2]/span</arg>
+</arguments>
+<msg timestamp="20171114 08:47:49.688" level="INFO">Clicking element '//div[@id='consulttimeDiv']//following-sibling::span[2]/span'.</msg>
+<status status="PASS" endtime="20171114 08:47:50.356" starttime="20171114 08:47:49.687"></status>
+</kw>
+<kw name="Get Value" library="ExtendedSelenium2Library">
+<doc>Returns the value attribute of element identified by `locator`.</doc>
+<arguments>
+<arg>${DateTimeInputID}</arg>
+</arguments>
+<assign>
+<var>${CurrentDateTime}</var>
+</assign>
+<msg timestamp="20171114 08:47:50.381" level="INFO">${CurrentDateTime} = 11/14/2017 10:47</msg>
+<status status="PASS" endtime="20171114 08:47:50.381" starttime="20171114 08:47:50.356"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${CurrentDateTime}</arg>
+</arguments>
+<msg timestamp="20171114 08:47:50.381" level="INFO">11/14/2017 10:47</msg>
+<status status="PASS" endtime="20171114 08:47:50.381" starttime="20171114 08:47:50.381"></status>
+</kw>
+<kw name="Clear Element Text" library="ExtendedSelenium2Library">
+<doc>Clears the text value of text entry element identified by `locator`.</doc>
+<arguments>
+<arg>${DateTimeInputID}</arg>
+</arguments>
+<status status="PASS" endtime="20171114 08:47:50.437" starttime="20171114 08:47:50.382"></status>
+</kw>
+<kw name="Get Text" library="ExtendedSelenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>${TimezoneElement}</arg>
+</arguments>
+<assign>
+<var>${TimeZoneText}</var>
+</assign>
+<msg timestamp="20171114 08:47:50.484" level="INFO">${TimeZoneText} = CST</msg>
+<status status="PASS" endtime="20171114 08:47:50.484" starttime="20171114 08:47:50.437"></status>
+</kw>
+<kw name="ReturnCurrentDate" library="EncounterFormKeywords">
+<doc>Keyword which returns the current system date:</doc>
+<arguments>
+<arg>${TimeZoneText}</arg>
+</arguments>
+<assign>
+<var>${CurrentDateFromSystem}</var>
+</assign>
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<arguments>
+<arg>UTC</arg>
+<arg>-6 hours</arg>
+<arg>result_format=%m/%d/%Y %H:%M</arg>
+</arguments>
+<assign>
+<var>${CSTDate}</var>
+</assign>
+<msg timestamp="20171114 08:47:50.488" level="INFO">${CSTDate} = 11/14/2017 10:47</msg>
+<status status="PASS" endtime="20171114 08:47:50.488" starttime="20171114 08:47:50.488"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${CSTDate}</arg>
+</arguments>
+<msg timestamp="20171114 08:47:50.489" level="INFO">11/14/2017 10:47</msg>
+<status status="PASS" endtime="20171114 08:47:50.489" starttime="20171114 08:47:50.488"></status>
+</kw>
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<arguments>
+<arg>UTC</arg>
+<arg>-5 hours</arg>
+<arg>result_format=%m/%d/%Y %H:%M</arg>
+</arguments>
+<assign>
+<var>${ESTDate}</var>
+</assign>
+<msg timestamp="20171114 08:47:50.489" level="INFO">${ESTDate} = 11/14/2017 11:47</msg>
+<status status="PASS" endtime="20171114 08:47:50.489" starttime="20171114 08:47:50.489"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${ESTDate}</arg>
+</arguments>
+<msg timestamp="20171114 08:47:50.490" level="INFO">11/14/2017 11:47</msg>
+<status status="PASS" endtime="20171114 08:47:50.490" starttime="20171114 08:47:50.490"></status>
+</kw>
+<kw name="Set Variable If" library="BuiltIn">
+<doc>Sets variable based on the given condition.</doc>
+<arguments>
+<arg>'${Timezone}' == 'CST'</arg>
+<arg>${CSTDate}</arg>
+<arg>'${Timezone}' == 'EST'</arg>
+<arg>${ESTDate}</arg>
+</arguments>
+<assign>
+<var>${CurrentDate}</var>
+</assign>
+<msg timestamp="20171114 08:47:50.490" level="INFO">${CurrentDate} = 11/14/2017 10:47</msg>
+<status status="PASS" endtime="20171114 08:47:50.490" starttime="20171114 08:47:50.490"></status>
+</kw>
+<msg timestamp="20171114 08:47:50.491" level="INFO">${CurrentDateFromSystem} = 11/14/2017 10:47</msg>
+<status status="PASS" endtime="20171114 08:47:50.491" starttime="20171114 08:47:50.487"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${CurrentDateFromSystem}</arg>
+</arguments>
+<msg timestamp="20171114 08:47:50.491" level="INFO">11/14/2017 10:47</msg>
+<status status="PASS" endtime="20171114 08:47:50.491" starttime="20171114 08:47:50.491"></status>
+</kw>
+<kw name="Add Time To Date" library="DateTime">
+<doc>Adds time to date and returns the resulting date.</doc>
+<arguments>
+<arg>${CurrentDateTime}</arg>
+<arg>01:00:00</arg>
+<arg>result_format=%m/%d/%Y %H:%M</arg>
+<arg>date_format=%m/%d/%Y %H:%M</arg>
+</arguments>
+<assign>
+<var>${InvalidTime1}</var>
+</assign>
+<msg timestamp="20171114 08:47:50.491" level="INFO">${InvalidTime1} = 11/14/2017 11:47</msg>
+<status status="PASS" endtime="20171114 08:47:50.492" starttime="20171114 08:47:50.491"></status>
+</kw>
+<kw name="Add Time To Date" library="DateTime">
+<doc>Adds time to date and returns the resulting date.</doc>
+<arguments>
+<arg>${CurrentDateTime}</arg>
+<arg>00:30:00</arg>
+<arg>result_format=%m/%d/%Y %H:%M</arg>
+<arg>date_format=%m/%d/%Y %H:%M</arg>
+</arguments>
+<assign>
+<var>${InvalidTime2}</var>
+</assign>
+<msg timestamp="20171114 08:47:50.492" level="INFO">${InvalidTime2} = 11/14/2017 11:17</msg>
+<status status="PASS" endtime="20171114 08:47:50.492" starttime="20171114 08:47:50.492"></status>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<doc>Returns a list containing given items.</doc>
+<arguments>
+<arg>${FutureDate&amp;Time}</arg>
+<arg>${PastDate&amp;Time}</arg>
+<arg>${InvalidTime1}</arg>
+<arg>${InvalidTime2}</arg>
+</arguments>
+<assign>
+<var>@{DateTimeList}</var>
+</assign>
+<msg timestamp="20171114 08:47:50.493" level="INFO">@{DateTimeList} = [ 11/22/2034 10:30 | 11/22/2014 10:30 | 11/14/2017 11:47 | 11/14/2017 11:17 ]</msg>
+<status status="PASS" endtime="20171114 08:47:50.493" starttime="20171114 08:47:50.492"></status>
+</kw>
+<kw type="for" name="${ListIndex} IN [ @{DateTimeList} ]">
+<kw type="foritem" name="${ListIndex} = 11/22/2034 10:30">
+<kw name="Subtract Date From Date" library="DateTime">
+<doc>Subtracts date from another date and returns time between.</doc>
+<arguments>
+<arg>${CurrentDateFromSystem}</arg>
+<arg>${ListIndex}</arg>
+<arg>result_format=number</arg>
+<arg>date1_format=%m/%d/%Y %H:%M</arg>
+<arg>date2_format=%m/%d/%Y %H:%M</arg>
+</arguments>
+<assign>
+<var>${value}</var>
+</assign>
+<msg timestamp="20171114 08:47:50.494" level="INFO">${value} = -537147780.0</msg>
+<status status="PASS" endtime="20171114 08:47:50.494" starttime="20171114 08:47:50.493"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${value}&lt;0</arg>
+<arg>Run Keywords</arg>
+<arg>InputFutureDate&amp;VerifyError</arg>
+<arg>${DateTimeInputID}</arg>
+<arg>${datetimepickerID}</arg>
+<arg>${FutureDate&amp;time}</arg>
+<arg>AND</arg>
+<arg>InputPastDate&amp;VerifyNoError</arg>
+<arg>${DateTimeInputID}</arg>
+<arg>${datetimepickerID}</arg>
+<arg>${PastDate&amp;Time}</arg>
+<arg>ELSE</arg>
+<arg>Run Keyword</arg>
+<arg>InputPastDate&amp;VerifyNoError</arg>
+<arg>${DateTimeInputID}</arg>
+<arg>${datetimepickerID}</arg>
+<arg>${PastDate&amp;Time}</arg>
+</arguments>
+<kw name="Run Keywords" library="BuiltIn">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>InputFutureDate&amp;VerifyError</arg>
+<arg>${DateTimeInputID}</arg>
+<arg>${datetimepickerID}</arg>
+<arg>${FutureDate&amp;time}</arg>
+<arg>AND</arg>
+<arg>InputPastDate&amp;VerifyNoError</arg>
+<arg>${DateTimeInputID}</arg>
+<arg>${datetimepickerID}</arg>
+<arg>${PastDate&amp;Time}</arg>
+</arguments>
+<kw name="InputFutureDate&amp;VerifyError" library="EncounterFormKeywords">
+<doc>Keyword to Input the Future date and verify for the Error:</doc>
+<arguments>
+<arg>${DateTimeInputID}</arg>
+<arg>${datetimepickerID}</arg>
+<arg>${FutureDate&amp;time}</arg>
+</arguments>
+<kw name="Input Text" library="ExtendedSelenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${DateInputID}</arg>
+<arg>${ActualDate}</arg>
+</arguments>
+<msg timestamp="20171114 08:47:50.505" level="INFO">Typing text '11/22/2034 10:30' into text field 'activiti-consulttimeDatetime'</msg>
+<status status="PASS" endtime="20171114 08:47:50.742" starttime="20171114 08:47:50.505"></status>
+</kw>
+<kw name="Page Should Contain Element" library="ExtendedSelenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>//datetimepicker[@id='${datetimepickerID}']//span[text()='No future dates allowed.']</arg>
+</arguments>
+<msg timestamp="20171114 08:47:50.765" level="INFO">Current page contains element '//datetimepicker[@id='ctrl_consulttime']//span[text()='No future dates allowed.']'.</msg>
+<status status="PASS" endtime="20171114 08:47:50.765" starttime="20171114 08:47:50.742"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:47:50.765" starttime="20171114 08:47:50.504"></status>
+</kw>
+<kw name="InputPastDate&amp;VerifyNoError" library="EncounterFormKeywords">
+<doc>Keyword to Input the Past date and verify no Error is displayed:</doc>
+<arguments>
+<arg>${DateTimeInputID}</arg>
+<arg>${datetimepickerID}</arg>
+<arg>${PastDate&amp;Time}</arg>
+</arguments>
+<kw name="Input Text" library="ExtendedSelenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${DateInputID}</arg>
+<arg>${ActualDate}</arg>
+</arguments>
+<msg timestamp="20171114 08:47:50.775" level="INFO">Typing text '11/22/2014 10:30' into text field 'activiti-consulttimeDatetime'</msg>
+<status status="PASS" endtime="20171114 08:47:51.001" starttime="20171114 08:47:50.775"></status>
+</kw>
+<kw name="Page Should Not Contain Element" library="ExtendedSelenium2Library">
+<doc>Verifies element identified by `locator` is not found on the current page.</doc>
+<arguments>
+<arg>//datetimepicker[@id='${datetimepickerID}']//span[text()='No future dates allowed.']</arg>
+</arguments>
+<msg timestamp="20171114 08:48:06.016" level="INFO">Current page does not contain element '//datetimepicker[@id='ctrl_consulttime']//span[text()='No future dates allowed.']'.</msg>
+<status status="PASS" endtime="20171114 08:48:06.016" starttime="20171114 08:47:51.002"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:48:06.017" starttime="20171114 08:47:50.774"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:48:06.017" starttime="20171114 08:47:50.495"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:48:06.017" starttime="20171114 08:47:50.494"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:48:06.018" starttime="20171114 08:47:50.493"></status>
+</kw>
+<kw type="foritem" name="${ListIndex} = 11/22/2014 10:30">
+<kw name="Subtract Date From Date" library="DateTime">
+<doc>Subtracts date from another date and returns time between.</doc>
+<arguments>
+<arg>${CurrentDateFromSystem}</arg>
+<arg>${ListIndex}</arg>
+<arg>result_format=number</arg>
+<arg>date1_format=%m/%d/%Y %H:%M</arg>
+<arg>date2_format=%m/%d/%Y %H:%M</arg>
+</arguments>
+<assign>
+<var>${value}</var>
+</assign>
+<msg timestamp="20171114 08:48:06.020" level="INFO">${value} = 94004220.0</msg>
+<status status="PASS" endtime="20171114 08:48:06.021" starttime="20171114 08:48:06.019"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${value}&lt;0</arg>
+<arg>Run Keywords</arg>
+<arg>InputFutureDate&amp;VerifyError</arg>
+<arg>${DateTimeInputID}</arg>
+<arg>${datetimepickerID}</arg>
+<arg>${FutureDate&amp;time}</arg>
+<arg>AND</arg>
+<arg>InputPastDate&amp;VerifyNoError</arg>
+<arg>${DateTimeInputID}</arg>
+<arg>${datetimepickerID}</arg>
+<arg>${PastDate&amp;Time}</arg>
+<arg>ELSE</arg>
+<arg>Run Keyword</arg>
+<arg>InputPastDate&amp;VerifyNoError</arg>
+<arg>${DateTimeInputID}</arg>
+<arg>${datetimepickerID}</arg>
+<arg>${PastDate&amp;Time}</arg>
+</arguments>
+<kw name="Run Keyword" library="BuiltIn">
+<doc>Executes the given keyword with the given arguments.</doc>
+<arguments>
+<arg>InputPastDate&amp;VerifyNoError</arg>
+<arg>${DateTimeInputID}</arg>
+<arg>${datetimepickerID}</arg>
+<arg>${PastDate&amp;Time}</arg>
+</arguments>
+<kw name="InputPastDate&amp;VerifyNoError" library="EncounterFormKeywords">
+<doc>Keyword to Input the Past date and verify no Error is displayed:</doc>
+<arguments>
+<arg>${DateTimeInputID}</arg>
+<arg>${datetimepickerID}</arg>
+<arg>${PastDate&amp;Time}</arg>
+</arguments>
+<kw name="Input Text" library="ExtendedSelenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${DateInputID}</arg>
+<arg>${ActualDate}</arg>
+</arguments>
+<msg timestamp="20171114 08:48:06.035" level="INFO">Typing text '11/22/2014 10:30' into text field 'activiti-consulttimeDatetime'</msg>
+<status status="PASS" endtime="20171114 08:48:06.267" starttime="20171114 08:48:06.035"></status>
+</kw>
+<kw name="Page Should Not Contain Element" library="ExtendedSelenium2Library">
+<doc>Verifies element identified by `locator` is not found on the current page.</doc>
+<arguments>
+<arg>//datetimepicker[@id='${datetimepickerID}']//span[text()='No future dates allowed.']</arg>
+</arguments>
+<msg timestamp="20171114 08:48:21.293" level="INFO">Current page does not contain element '//datetimepicker[@id='ctrl_consulttime']//span[text()='No future dates allowed.']'.</msg>
+<status status="PASS" endtime="20171114 08:48:21.294" starttime="20171114 08:48:06.267"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:48:21.294" starttime="20171114 08:48:06.034"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:48:21.294" starttime="20171114 08:48:06.023"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:48:21.294" starttime="20171114 08:48:06.021"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:48:21.295" starttime="20171114 08:48:06.018"></status>
+</kw>
+<kw type="foritem" name="${ListIndex} = 11/14/2017 11:47">
+<kw name="Subtract Date From Date" library="DateTime">
+<doc>Subtracts date from another date and returns time between.</doc>
+<arguments>
+<arg>${CurrentDateFromSystem}</arg>
+<arg>${ListIndex}</arg>
+<arg>result_format=number</arg>
+<arg>date1_format=%m/%d/%Y %H:%M</arg>
+<arg>date2_format=%m/%d/%Y %H:%M</arg>
+</arguments>
+<assign>
+<var>${value}</var>
+</assign>
+<msg timestamp="20171114 08:48:21.297" level="INFO">${value} = -3600.0</msg>
+<status status="PASS" endtime="20171114 08:48:21.297" starttime="20171114 08:48:21.296"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${value}&lt;0</arg>
+<arg>Run Keywords</arg>
+<arg>InputFutureDate&amp;VerifyError</arg>
+<arg>${DateTimeInputID}</arg>
+<arg>${datetimepickerID}</arg>
+<arg>${FutureDate&amp;time}</arg>
+<arg>AND</arg>
+<arg>InputPastDate&amp;VerifyNoError</arg>
+<arg>${DateTimeInputID}</arg>
+<arg>${datetimepickerID}</arg>
+<arg>${PastDate&amp;Time}</arg>
+<arg>ELSE</arg>
+<arg>Run Keyword</arg>
+<arg>InputPastDate&amp;VerifyNoError</arg>
+<arg>${DateTimeInputID}</arg>
+<arg>${datetimepickerID}</arg>
+<arg>${PastDate&amp;Time}</arg>
+</arguments>
+<kw name="Run Keywords" library="BuiltIn">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>InputFutureDate&amp;VerifyError</arg>
+<arg>${DateTimeInputID}</arg>
+<arg>${datetimepickerID}</arg>
+<arg>${FutureDate&amp;time}</arg>
+<arg>AND</arg>
+<arg>InputPastDate&amp;VerifyNoError</arg>
+<arg>${DateTimeInputID}</arg>
+<arg>${datetimepickerID}</arg>
+<arg>${PastDate&amp;Time}</arg>
+</arguments>
+<kw name="InputFutureDate&amp;VerifyError" library="EncounterFormKeywords">
+<doc>Keyword to Input the Future date and verify for the Error:</doc>
+<arguments>
+<arg>${DateTimeInputID}</arg>
+<arg>${datetimepickerID}</arg>
+<arg>${FutureDate&amp;time}</arg>
+</arguments>
+<kw name="Input Text" library="ExtendedSelenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${DateInputID}</arg>
+<arg>${ActualDate}</arg>
+</arguments>
+<msg timestamp="20171114 08:48:21.312" level="INFO">Typing text '11/22/2034 10:30' into text field 'activiti-consulttimeDatetime'</msg>
+<status status="PASS" endtime="20171114 08:48:21.511" starttime="20171114 08:48:21.312"></status>
+</kw>
+<kw name="Page Should Contain Element" library="ExtendedSelenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>//datetimepicker[@id='${datetimepickerID}']//span[text()='No future dates allowed.']</arg>
+</arguments>
+<msg timestamp="20171114 08:48:21.521" level="INFO">Current page contains element '//datetimepicker[@id='ctrl_consulttime']//span[text()='No future dates allowed.']'.</msg>
+<status status="PASS" endtime="20171114 08:48:21.521" starttime="20171114 08:48:21.511"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:48:21.521" starttime="20171114 08:48:21.311"></status>
+</kw>
+<kw name="InputPastDate&amp;VerifyNoError" library="EncounterFormKeywords">
+<doc>Keyword to Input the Past date and verify no Error is displayed:</doc>
+<arguments>
+<arg>${DateTimeInputID}</arg>
+<arg>${datetimepickerID}</arg>
+<arg>${PastDate&amp;Time}</arg>
+</arguments>
+<kw name="Input Text" library="ExtendedSelenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${DateInputID}</arg>
+<arg>${ActualDate}</arg>
+</arguments>
+<msg timestamp="20171114 08:48:21.528" level="INFO">Typing text '11/22/2014 10:30' into text field 'activiti-consulttimeDatetime'</msg>
+<status status="PASS" endtime="20171114 08:48:21.722" starttime="20171114 08:48:21.528"></status>
+</kw>
+<kw name="Page Should Not Contain Element" library="ExtendedSelenium2Library">
+<doc>Verifies element identified by `locator` is not found on the current page.</doc>
+<arguments>
+<arg>//datetimepicker[@id='${datetimepickerID}']//span[text()='No future dates allowed.']</arg>
+</arguments>
+<msg timestamp="20171114 08:48:36.740" level="INFO">Current page does not contain element '//datetimepicker[@id='ctrl_consulttime']//span[text()='No future dates allowed.']'.</msg>
+<status status="PASS" endtime="20171114 08:48:36.740" starttime="20171114 08:48:21.722"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:48:36.740" starttime="20171114 08:48:21.527"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:48:36.740" starttime="20171114 08:48:21.300"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:48:36.740" starttime="20171114 08:48:21.298"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:48:36.741" starttime="20171114 08:48:21.295"></status>
+</kw>
+<kw type="foritem" name="${ListIndex} = 11/14/2017 11:17">
+<kw name="Subtract Date From Date" library="DateTime">
+<doc>Subtracts date from another date and returns time between.</doc>
+<arguments>
+<arg>${CurrentDateFromSystem}</arg>
+<arg>${ListIndex}</arg>
+<arg>result_format=number</arg>
+<arg>date1_format=%m/%d/%Y %H:%M</arg>
+<arg>date2_format=%m/%d/%Y %H:%M</arg>
+</arguments>
+<assign>
+<var>${value}</var>
+</assign>
+<msg timestamp="20171114 08:48:36.742" level="INFO">${value} = -1800.0</msg>
+<status status="PASS" endtime="20171114 08:48:36.742" starttime="20171114 08:48:36.741"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${value}&lt;0</arg>
+<arg>Run Keywords</arg>
+<arg>InputFutureDate&amp;VerifyError</arg>
+<arg>${DateTimeInputID}</arg>
+<arg>${datetimepickerID}</arg>
+<arg>${FutureDate&amp;time}</arg>
+<arg>AND</arg>
+<arg>InputPastDate&amp;VerifyNoError</arg>
+<arg>${DateTimeInputID}</arg>
+<arg>${datetimepickerID}</arg>
+<arg>${PastDate&amp;Time}</arg>
+<arg>ELSE</arg>
+<arg>Run Keyword</arg>
+<arg>InputPastDate&amp;VerifyNoError</arg>
+<arg>${DateTimeInputID}</arg>
+<arg>${datetimepickerID}</arg>
+<arg>${PastDate&amp;Time}</arg>
+</arguments>
+<kw name="Run Keywords" library="BuiltIn">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>InputFutureDate&amp;VerifyError</arg>
+<arg>${DateTimeInputID}</arg>
+<arg>${datetimepickerID}</arg>
+<arg>${FutureDate&amp;time}</arg>
+<arg>AND</arg>
+<arg>InputPastDate&amp;VerifyNoError</arg>
+<arg>${DateTimeInputID}</arg>
+<arg>${datetimepickerID}</arg>
+<arg>${PastDate&amp;Time}</arg>
+</arguments>
+<kw name="InputFutureDate&amp;VerifyError" library="EncounterFormKeywords">
+<doc>Keyword to Input the Future date and verify for the Error:</doc>
+<arguments>
+<arg>${DateTimeInputID}</arg>
+<arg>${datetimepickerID}</arg>
+<arg>${FutureDate&amp;time}</arg>
+</arguments>
+<kw name="Input Text" library="ExtendedSelenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${DateInputID}</arg>
+<arg>${ActualDate}</arg>
+</arguments>
+<msg timestamp="20171114 08:48:36.755" level="INFO">Typing text '11/22/2034 10:30' into text field 'activiti-consulttimeDatetime'</msg>
+<status status="PASS" endtime="20171114 08:48:37.018" starttime="20171114 08:48:36.755"></status>
+</kw>
+<kw name="Page Should Contain Element" library="ExtendedSelenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>//datetimepicker[@id='${datetimepickerID}']//span[text()='No future dates allowed.']</arg>
+</arguments>
+<msg timestamp="20171114 08:48:37.031" level="INFO">Current page contains element '//datetimepicker[@id='ctrl_consulttime']//span[text()='No future dates allowed.']'.</msg>
+<status status="PASS" endtime="20171114 08:48:37.031" starttime="20171114 08:48:37.018"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:48:37.032" starttime="20171114 08:48:36.754"></status>
+</kw>
+<kw name="InputPastDate&amp;VerifyNoError" library="EncounterFormKeywords">
+<doc>Keyword to Input the Past date and verify no Error is displayed:</doc>
+<arguments>
+<arg>${DateTimeInputID}</arg>
+<arg>${datetimepickerID}</arg>
+<arg>${PastDate&amp;Time}</arg>
+</arguments>
+<kw name="Input Text" library="ExtendedSelenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${DateInputID}</arg>
+<arg>${ActualDate}</arg>
+</arguments>
+<msg timestamp="20171114 08:48:37.041" level="INFO">Typing text '11/22/2014 10:30' into text field 'activiti-consulttimeDatetime'</msg>
+<status status="PASS" endtime="20171114 08:48:37.239" starttime="20171114 08:48:37.041"></status>
+</kw>
+<kw name="Page Should Not Contain Element" library="ExtendedSelenium2Library">
+<doc>Verifies element identified by `locator` is not found on the current page.</doc>
+<arguments>
+<arg>//datetimepicker[@id='${datetimepickerID}']//span[text()='No future dates allowed.']</arg>
+</arguments>
+<msg timestamp="20171114 08:48:52.274" level="INFO">Current page does not contain element '//datetimepicker[@id='ctrl_consulttime']//span[text()='No future dates allowed.']'.</msg>
+<status status="PASS" endtime="20171114 08:48:52.274" starttime="20171114 08:48:37.239"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:48:52.275" starttime="20171114 08:48:37.040"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:48:52.275" starttime="20171114 08:48:36.744"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:48:52.275" starttime="20171114 08:48:36.742"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:48:52.275" starttime="20171114 08:48:36.741"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:48:52.275" starttime="20171114 08:47:50.493"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:48:52.276" starttime="20171114 08:47:49.685"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:48:52.276" starttime="20171114 08:46:11.795"></status>
+</kw>
+<kw name="CloseNewEncounterForm" library="EncounterFormKeywords">
+<doc>Keyword to Close the Encounter Form:</doc>
+<kw name="Select Window" library="ExtendedSelenium2Library">
+<doc>Selects the window matching locator and return previous window handle.</doc>
+<status status="PASS" endtime="20171114 08:48:52.298" starttime="20171114 08:48:52.280"></status>
+</kw>
+<kw name="Click Element" library="ExtendedSelenium2Library">
+<doc>Clicks an element identified by ``locator``.</doc>
+<arguments>
+<arg>${CloseEncounterFormElement}</arg>
+</arguments>
+<msg timestamp="20171114 08:48:52.299" level="INFO">Clicking element '//div[@id='formModal']//span[text()='CLOSE']'.</msg>
+<status status="PASS" endtime="20171114 08:48:52.968" starttime="20171114 08:48:52.298"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:48:52.969" starttime="20171114 08:48:52.278"></status>
+</kw>
+<kw name="GoBackOnCloseFormWindow" library="EncounterFormKeywords">
+<doc>Keyword to click on Go Back button on close form window:</doc>
+<kw name="Click Button" library="ExtendedSelenium2Library">
+<doc>Clicks a button identified by ``locator``.</doc>
+<arguments>
+<arg>${GoBackButtonElement}</arg>
+</arguments>
+<msg timestamp="20171114 08:48:52.970" level="INFO">Clicking button '//button[text()=' Go Back ']'.</msg>
+<status status="PASS" endtime="20171114 08:48:53.732" starttime="20171114 08:48:52.970"></status>
+</kw>
+<kw name="Page Should Contain Element" library="ExtendedSelenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>${PediatricEncounterTextElement}</arg>
+</arguments>
+<msg timestamp="20171114 08:48:53.764" level="INFO">Current page contains element '//div[@id='formModal']//span[contains(text(),'Pediatric Encounter')]'.</msg>
+<status status="PASS" endtime="20171114 08:48:53.764" starttime="20171114 08:48:53.733"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:48:53.764" starttime="20171114 08:48:52.970"></status>
+</kw>
+<kw name="CloseNewEncounterForm" library="EncounterFormKeywords">
+<doc>Keyword to Close the Encounter Form:</doc>
+<kw name="Select Window" library="ExtendedSelenium2Library">
+<doc>Selects the window matching locator and return previous window handle.</doc>
+<status status="PASS" endtime="20171114 08:48:53.773" starttime="20171114 08:48:53.765"></status>
+</kw>
+<kw name="Click Element" library="ExtendedSelenium2Library">
+<doc>Clicks an element identified by ``locator``.</doc>
+<arguments>
+<arg>${CloseEncounterFormElement}</arg>
+</arguments>
+<msg timestamp="20171114 08:48:53.774" level="INFO">Clicking element '//div[@id='formModal']//span[text()='CLOSE']'.</msg>
+<status status="PASS" endtime="20171114 08:48:54.383" starttime="20171114 08:48:53.774"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:48:54.384" starttime="20171114 08:48:53.765"></status>
+</kw>
+<kw name="CloseWithoutSavingOnCloseFormWindow" library="EncounterFormKeywords">
+<doc>Keyword to click on Close Without Saving button on close form window:</doc>
+<kw name="Click Button" library="ExtendedSelenium2Library">
+<doc>Clicks a button identified by ``locator``.</doc>
+<arguments>
+<arg>${CloseWithoutSavingButtonElement}</arg>
+</arguments>
+<msg timestamp="20171114 08:48:54.385" level="INFO">Clicking button '//button[text()=' Close without Saving ']'.</msg>
+<status status="PASS" endtime="20171114 08:48:55.931" starttime="20171114 08:48:54.385"></status>
+</kw>
+<kw name="Get Title" library="ExtendedSelenium2Library">
+<doc>Returns title of current page.</doc>
+<assign>
+<var>${CurrentWindowTitle}</var>
+</assign>
+<msg timestamp="20171114 08:48:55.938" level="INFO">${CurrentWindowTitle} = InTouch Clinical Apps</msg>
+<status status="PASS" endtime="20171114 08:48:55.938" starttime="20171114 08:48:55.931"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${CurrentWindowTitle}</arg>
+<arg>InTouch Clinical Apps</arg>
+</arguments>
+<status status="PASS" endtime="20171114 08:48:55.938" starttime="20171114 08:48:55.938"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:48:55.938" starttime="20171114 08:48:54.385"></status>
+</kw>
+<status status="PASS" endtime="20171114 08:48:55.939" critical="yes" starttime="20171114 08:46:09.448"></status>
+</test>
+<status status="PASS" endtime="20171114 08:48:55.941" starttime="20171114 08:45:44.537"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="3">Critical Tests</stat>
+<stat fail="0" pass="3">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="PreviewTest" pass="3">PreviewTest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
