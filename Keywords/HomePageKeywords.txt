@@ -5,7 +5,6 @@ Documentation     All the Keywords required to perform the Home Page test.
 ...               ElementLocators -> HomePageElementLocators.
 ...               ElementLocators -> EncounterFormElementLocators.
 ...               DataFiles -> HomePageData.txt
-...
 Library           ExtendedSelenium2Library
 Library           Collections
 Library           String
@@ -27,6 +26,18 @@ ToggleNavigation
 
 SearchForPatients
     [Arguments]    ${SearchContent}
+    [Documentation]    Keyword to search for the Patients using the patient name:
+    ...
+    ...    1) Input the search text into the search for pateints input field by passing the search content.
+    ...    2) Clear the search field text to verify if clearing the field works.
+    ...    3) Input the search text one more time.
+    ...    4) Click the search button
+    ...    5) Pressing the keyboard Enter key to verify the the search is invoked.
+    ...    6) Identifying the rows and column count of the search result table.
+    ...    7) Create a List and add the text from the name column of the result table by parsing thorugh all the rows.
+    ...    8) Verify if the List has all the values same as the patient name searched.
+    ...    9) Go back to Homepage by clicking on the Encounters navigation element.
+    ...
     Input Text    ${SearchPatientTextField}    ${SearchContent}
     Clear Element Text    ${SearchPatientTextField}
     Input Text    ${SearchPatientTextField}    ${SearchContent}
@@ -45,6 +56,23 @@ SearchForPatients
     Click Element    ${EncountersNavShortcut}
 
 IDCRHelpCenter
+    [Documentation]    Keyword to test the help feature on the HomePage:
+    ...
+    ...    1) Clicking on the Help graphical icon element.
+    ...    2) Waiting for 15s until the page has Live Chat Link element visible.
+    ...    3) Clicking on Live Chat Link.
+    ...    4) Switching the control onto the newly opened window the chat link redirect to.
+    ...    5) Verifying the newly opened window by checked for the text on the page.
+    ...    6) Closing the current newly opened chat window.
+    ...    7) Switching the control back to Main window by selecting the window based on HomePage title.
+    ...    8) Clicking on the Help graphical icon element again to test for other features within Help.
+    ...    9) Waiting for 15s until the page has Contact Us Link element visible.
+    ...    10) Clicking on Contact Us Link.
+    ...    11) Switching the control onto the newly opened window to which the Contact Us link redirect to.
+    ...    12) Verifying the newly opened window by checking if the Page title equals the Contact Us page title.
+    ...    13) Closing the current newly opened Contact Us window.
+    ...    14) Switching the control back to Main window by selecting the window based on HomePage title.
+    ...
     Click Element    ${HelpDropdown}
     Wait Until Page Contains Element    ${HCLiveChatLink}    15s
     Click Element    ${HCLiveChatLink}

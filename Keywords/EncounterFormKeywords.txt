@@ -43,6 +43,24 @@ TeleMedConsentOption
 
 ValidateDate
     [Arguments]    ${dateDivText}    ${DateInputID}    ${datetimepickerID}
+    [Documentation]    Keyword to Validate the date field on the Encounter form:
+    ...
+    ...    Recieves 3 arguments-
+    ...    ${dateDivText} - ID passed onto the Xpath which identifies the Date of Birth Date now graphical icon.
+    ...    ${DateInputID} - ID representing the Date Text field.
+    ...    ${datetimepickerID} - ID representing the 'No Future Date Allowed' error element.
+    ...
+    ...    1) Click on date now graphical icon of the Date of Birth text field.
+    ...    2) Read the value from the Date of Birth field and store in the variable.
+    ...    3) Clearing the Date of Birth field to input the new date.
+    ...    4) Reading the time zone next the datetime filed on the page.
+    ...    5) Calling the Keyword ReturnCurrentDate which returns the current system date based on the time zone passed.
+    ...    6) Converting the date time format to date only format
+    ...    7) Creating a list that has future date and the past date.
+    ...    8) For each item in the list subtract the data from the current date identified from the system and collect the result in the variable ${value} by number format.
+    ...    - If the value is less than 0 then the date item in the list is a Future date and we invoke InoutFutureDate&VerifyError keyword and after verifying for the error we send the past date which does not produce an error.
+    ...    - If the value is greater than or equal to zero then the date item in th elist is a Past date and we invoke the InputPastDate&VerifyNoError keyword that send the past date which does not produce an error.
+    ...
     Click Element    //div[@id='${dateDivText}']//following-sibling::span[2]/span
     ${CurrentdateFromApp}=    Get Value    ${DateInputID}
     log    ${CurrentdateFromApp}=
@@ -91,6 +109,25 @@ InputPastDate&VerifyNoError
 
 ValidateDate&Time
     [Arguments]    ${DateTimeDivText}    ${DateTimeInputID}    ${datetimepickerID}
+    [Documentation]    Keyword to Validate the date field on the Encounter form:
+    ...
+    ...    Recieves 3 arguments-
+    ...    ${DateTimeDivText} - ID passed onto the Xpath which identifies the Date of Birth Date now graphical icon.
+    ...    ${DateTimeInputID} - ID representing the Date Text field.
+    ...    ${datetimepickerID} - ID representing the 'No Future Date Allowed' error element.
+    ...
+    ...    1) Click on date now graphical icon of the Date Time text field.
+    ...    2) Read the value from the Date Time field and store in the variable.
+    ...    3) Clearing the Date Time field to input the new date.
+    ...    4) Reading the time zone next the datetime filed on the page.
+    ...    5) Calling the Keyword ReturnCurrentDate which returns the current system date based on the time zone passed.
+    ...    6) Creating a InvalidTime1 string by adding hours to the current date time.
+    ...    7) Creating a InvalidTime2 string by adding seconds to the current date time.
+    ...    8) Creating a list that has future date, past date, invalidtime1 and invalidtime2.
+    ...    9) For each item in the list subtract the data from the current date identified from the system and collect the result in the variable ${value} by number format.
+    ...    - If the value is less than 0 then the date item in the list is a Future date and we invoke InoutFutureDate&VerifyError keyword and after verifying for the error we send the past date which does not produce an error.
+    ...    - If the value is greater than or equal to zero then the date item in th elist is a Past date and we invoke the InputPastDate&VerifyNoError keyword that send the past date which does not produce an error.
+    ...
     Click Element    //div[@id='${DateTimeDivText}']//following-sibling::span[2]/span
     ${CurrentDateTime}=    Get Value    ${DateTimeInputID}
     log    ${CurrentDateTime}
@@ -111,6 +148,25 @@ ValidateDate&Time
     \    ...    ${PastDate&Time}
 
 FillNewEncounterForm
+    [Documentation]    Keyword to fill and verify the New Encounter form:
+    ...
+    ...    1) Selecting the IFrame to work on the form elements.
+    ...    2) Sending the input text for the Reason for Referral text box.
+    ...    3) Selecting the location by passing the value of the Label the Select class is expecting.
+    ...    4) Sending the input text for the First Name field.
+    ...    5) Sending the input text for the Last Name field.
+    ...    6) Invoking Select Gender keyword which select the gender radio button.
+    ...    7) Sending the input text for the MRN field.
+    ...    8) Sending the input for the Weight field.
+    ...    9) Selecting the Weight Measure by passing the value of the Label the Select class is expecting.
+    ...    10) Invoking the ValidateDate keyword to validate Date of Birth field.
+    ...    11) Invoking the TeleMedConsentOption keyword which selects the ConsentOption based on the value passed.
+    ...    12) Invoking the InvokingtheConsultTypeOption keyword which selects the ConsentOption based on the value passed.
+    ...    13) Scroll into view the next element to make the element visible on the window and invoke.
+    ...    14) Sending the input for Reference Neonatologist text filed.
+    ...    15) Invoking the ValidateDate&Time keyword to validate date and time of Admission Time field.
+    ...    16) Invoking the ValidateDate&Time keyword to validate date and time of Consult Time field.
+    ...
     Select Frame    ${IFrameElement}
     Input Text    ${ReferralReasonElementl}    ${ReasonForReferralText}
     Select From List By Label    ${LocationLabelElement}    ${Location}
