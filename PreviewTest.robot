@@ -13,7 +13,7 @@ Resource          Keywords/LoginPageKeywords.txt
 
 *** Test Cases ***
 LoginTest_ValidCredentials
-    [Documentation]    TestCase to verify login into the application using Valid Credentials.
+    [Documentation]    TestCase to verify login into the application using Valid Credentials.Test sync
     ...
     ...    Dependencies:
     ...    Keywords -> LoginPageKeywords.
